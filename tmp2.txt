@@ -1,0 +1,2113 @@
+commit d471fec0b694159ed28c601277a6597dedaf83ee
+Merge: d33fc9e 49c01ed 1e78243
+Author: gervasius wisely <gervasiuswisely@gmail.com>
+Date:   Sun Oct 15 13:00:47 2023 +0700
+
+    On main: revisi commit ( 15-10-2023)
+
+diff --cc components/Defaultcomp.vue
+index 34d7dbc,34d7dbc,0000000..1a90b71
+mode 100644,100644,000000..100644
+--- a/components/Defaultcomp.vue
++++ b/components/Defaultcomp.vue
+@@@@ -1,33 -1,33 -1,0 +1,40 @@@@
+  +<template>
+  +  <div class="history">
+  +    <v-container>
+  +      <div class="history-content">
+  +        <div class="icon-container">
+--           <Svgicon :stroke="'#00509a'" />
+--           <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
+--           <Svgicon :stroke="'#00509a'" />
++++          <div class="icon-container2">
++++            <div class="icon ms-4">
++++              <Svgicon :stroke="'#00509a'" />
++++            </div>
++++
++++            <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
++++            <div>
++++              <Svgicon :stroke="'#00509a'" />
++++            </div>
++++          </div>
+  +        </div>
+  +
+  +        <h1 style="margin-bottom: 20px">{{ arraynama[0].title }}</h1>
+  +        <p v-html="arraynama[0].description.replace(/\n/g, '<br>')"></p>
+  +      </div>
+  +    </v-container>
+  +  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  data: () => ({
+  +    history: [
+  +      {
+  +        title: 'History',
+  +        description:
+  +          'St Stanislaus’ College is a faith based school with a long history of academic and pastoral excellence, offering boys only education in an inclusive, pedagogically robust environment based in an idyllic rural geographical location. Named for the patron saint of students, St Stanisław Kostka, the College was inaugurated by the first Bishop of Bathurst, Bishop Matthew Quinn DD who opened St Stanislaus High School for boys in Bathurst in 1867 under the direction of Mr Michael McGirr',
+  +      },
+  +    ],
+  +  }),
+  +  props: {
+  +    arraynama: Array,
+  +  },
+  +};
+  +</script>
+diff --cc components/Defaultcompimage.vue
+index 530f50d,530f50d,0000000..84e1523
+mode 100644,100644,000000..100644
+--- a/components/Defaultcompimage.vue
++++ b/components/Defaultcompimage.vue
+@@@@ -1,18 -1,18 -1,0 +1,55 @@@@
+  +<template>
+--   <div class="team">
+--     <v-container>
+--       <div class="leadercontent">
+--         <div class="icon-container">
+--           <Svgicon :stroke="'#00509a'" />
+--           <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
+--           <Svgicon :stroke="'#00509a'" />
+--         </div>
++++  <v-container>
++++    <div class="icon-container mb-6">
++++      <div class="icon ms-4">
++++        <Svgicon :stroke="'#00509a'" />
++++      </div>
+  +
+--         <h1>Our Leadership Team</h1>
+--         <div class="imgframe">
+--           <img src="assets/leadershipteam.png" style="width: 100%" alt="" />
+--         </div>
++++      <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
++++      <div>
++++        <Svgicon :stroke="'#00509a'" />
+  +      </div>
+--     </v-container>
+--   </div>
++++    </div>
++++    <v-row>
++++      <v-col :cols="12" :lg="6">
++++        <div class="imgcontainer">
++++          <h1 style="margin-bottom: 20px">{{ namaarray[0].title }}</h1>
++++          <p>
++++            {{ namaarray[0].description }}
++++          </p>
++++        </div>
++++      </v-col>
++++      <v-col :cols="12" :lg="6">
++++        <img :src="namaarray[0].src" :style="{ width: width }" />
++++      </v-col>
++++    </v-row>
++++  </v-container>
+  +</template>
++++
++++<script>
++++export default {
++++  data: () => ({
++++    asrama: [
++++      {
++++        title: 'Tempat Tinggal Para siswa seminari Garum',
++++        description:
++++          '   Siswa yang sudah terdaftar dan diterima di seminari akan disediakan tempat tinggal berupa asrama yang tentunya sudah cukup bagus dan layak ditinggali. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus voluptatibus repellendus repellat qui ratione aut sed aspernatur? Ab nesciunt sed, dolorem culpa et expedita voluptatum consequuntur ullam veniam atque eaque eius fugit sunt? Assumenda soluta suscipit minus quos fugit vel impedit dolore accusamus earum quis sed blanditiis est cupiditate velit, quia odio laudantium ullam magnam! Sed vel, nulla voluptatum accusamus debitis corporis eaque eligendi possimus dolor laboriosam aperiam assumenda? Recusandae amet beatae ea illo fuga dolores autem expedita debitis officiis perferendis unde quae minus, fugiat temporibus quibusdam in sed vel dolore blanditiis assumenda nemo, ex quia libero quisquam? Vel, dolor!',
++++        src: 'assets/asramagarum.jpg',
++++      },
++++    ],
++++    kurikulum: [
++++      {
++++        title: 'Kurikulum yang digunakan untuk pembelajaran di seminari garum',
++++        description:
++++          'Pendidikan di seminari garum mulai dari smp sampai sma adapun pembagian kurikulum yaitu kurikulum seminari untuk persiapan kelas pertama dan kelas atas dan kurikulum 2013 untuk jenjang sekolah menengah atas (SMA). Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa tempore quibusdam minus. Cupiditate soluta blanditiis distinctio molestiae beatae quasi totam placeat excepturi officia error alias saepe, rerum voluptatem minus fugiat odit consequuntur. Nulla praesentium animi consectetur placeat quibusdam facilis perspiciatis accusantium sint esse, porro repudiandae inventore? Dolorum expedita obcaecati corrupti veniam eum nostrum autem placeat blanditiis earum vero sit numquam culpa nisi, at ipsam voluptas pariatur cupiditate ipsum ab a est. Dicta assumenda aspernatur rerum cumque officia temporibus eum nulla animi dolore enim odit blanditiis itaque odio consequatur, nostrum, vitae obcaecati omnis incidunt earum voluptatem! Minus consequatur nisi repudiandae voluptas.',
++++        src: 'assets/kurikulum2013.png',
++++      },
++++    ],
++++  }),
++++
++++  props: {
++++    namaarray: Array,
++++    width: String,
++++  },
++++};
++++</script>
+diff --cc components/Enrollment.vue
+index 1fed88e,1fed88e,0000000..82f4b95
+mode 100644,100644,000000..100644
+--- a/components/Enrollment.vue
++++ b/components/Enrollment.vue
+@@@@ -1,22 -1,22 -1,0 +1,22 @@@@
+  +<template>
+  +  <div class="herobackground" style="display: flex; justify-content: end; align-items: center; position: relative; height: 800px">
+  +    <v-container-fluid>
+  +      <div class="svg">
+  +        <Svgtop :myfill="'#ffffff'" />
+  +      </div>
+  +
+--       <div class="overlay-div pa-6" style="width: 50%; background: rgba(0, 80, 154, 0.7)">
++++      <div class="overlay-div pa-6" style="background: rgba(0, 80, 154, 0.7)">
+  +        <div class="content-container text-white d-flex" style="flex-wrap: wrap">
+  +          <h1 class="pb-3">Have an enrolment enquiry?</h1>
+  +          <p>Please contact the College Registrar via the link below or make contact with the College office, Monday to Friday 8am to 4pm.</p>
+  +          <div>
+--             <v-btn class="pa-6 d-flex" style="justify-content: center; align-items: center"><NuxtLink class="navstyle" to="/contact">Ask here</NuxtLink></v-btn>
++++            <v-btn class="pa-6 d-flex" style="justify-content: center; align-items: center; margin-top: 20px"><NuxtLink class="navstyle" to="/contact">Ask here</NuxtLink></v-btn>
+  +          </div>
+  +        </div>
+  +      </div>
+  +      <div>
+  +        <SvgBot :position="'absolute'" :bottom="'-20px'" :left="'0'" :myfill="'#ffffff'" />
+  +      </div>
+  +    </v-container-fluid>
+  +  </div>
+  +</template>
+diff --cc components/Footer.vue
+index 0f7b939,0f7b939,0000000..a82b02a
+mode 100644,100644,000000..100644
+--- a/components/Footer.vue
++++ b/components/Footer.vue
+@@@@ -1,46 -1,46 -1,0 +1,99 @@@@
+  +<template>
+  +  <div class="footer">
+--     <v-footer>
++++    <!-- <v-footer>
+  +      <v-container>
+  +        <v-row>
+  +          <v-col :cols="12" :lg="4">
+  +            <h2 class="mb-4">Quick Links</h2>
+  +            <ul>
+  +              <div class="navlink" style="list-style: none; padding: 10px">
+  +                <li><NuxtLink class="navstyle" to="/">Home</NuxtLink></li>
+  +                <hr />
+  +                <li><NuxtLink class="navstyle" to="/ourprofile">About</NuxtLink></li>
+  +                <hr />
+  +                <li><NuxtLink class="navstyle" to="/joinus">Join Us</NuxtLink></li>
+  +                <hr />
+  +                <li><NuxtLink class="navstyle" to="/callendar">Garum's Life</NuxtLink></li>
+  +                <hr />
+  +                <li><NuxtLink class="navstyle" to="/article">Article & Publication</NuxtLink></li>
+  +                <hr />
+  +                <li><NuxtLink class="navstyle" to="/contact">Contact</NuxtLink></li>
+  +                <hr />
+  +              </div>
+  +            </ul>
+  +          </v-col>
+  +          <v-col :cols="12" :lg="4">
+  +            <div class="text-center">
+  +              <img src="assets/garumlogo.png" style="width: 40%; margin-left: 20px" alt="" />
+  +            </div>
+  +          </v-col>
+  +          <v-col :cols="12" :lg="4">
+  +            <div class="footer-contact">
+  +              <h3>Contact Us</h3>
+  +              <ul style="list-style: none; margin-top: 10px">
+  +                <li><v-icon icon="fas fa-map-marker-alt fa-s" style="color: grey; margin-right: 5px" />Jl. Merdeka Timur 4 – 6 Garum Blitar 66182</li>
+  +                <li class="mt-5"><v-icon icon="fas fa-phone fa-s" style="color: grey; margin-right: 5px" />0-342-561314</li>
+  +                <li class="mt-5"><v-icon icon="fas fa-clock fa-s" style="color: grey; margin-right: 5px" />08.00 - 16.00 (Weekdays)</li>
+  +              </ul>
+  +            </div>
+  +          </v-col>
+  +        </v-row>
+  +        <hr style="margin-top: 10px" />
+  +        <p class="text-center" style="color: grey; opacity: 60%">&copy; 2023 Seminari Vincentius A Paulo All Rights Reserved.</p>
+  +      </v-container>
++++    </v-footer> -->
++++
++++    <v-footer>
++++      <v-container>
++++        <v-row class="d-flex" style="align-items: center">
++++          <v-col :cols="12" :lg="4">
++++            <h2 class="mb-4">Quick Links</h2>
++++            <ul>
++++              <div class="navlink" style="list-style: none; padding: 10px">
++++                <li><NuxtLink class="navstyle" to="/">Home</NuxtLink></li>
++++                <hr />
++++                <li><NuxtLink class="navstyle" to="/ourprofile">About</NuxtLink></li>
++++                <hr />
++++                <li><NuxtLink class="navstyle" to="/joinus">Join Us</NuxtLink></li>
++++                <hr />
++++                <li><NuxtLink class="navstyle" to="/callendar">Garum's Life</NuxtLink></li>
++++                <hr />
++++                <li><NuxtLink class="navstyle" to="/article">Article & Publication</NuxtLink></li>
++++                <hr />
++++                <li><NuxtLink class="navstyle" to="/contact">Contact</NuxtLink></li>
++++                <hr />
++++              </div>
++++            </ul>
++++          </v-col>
++++          <v-col :cols="12" :lg="4">
++++            <div class="text-center">
++++              <img src="assets/garumlogo.png" style="width: 40%; margin-left: 20px" alt="" />
++++            </div>
++++          </v-col>
++++          <v-col :cols="12" :lg="4">
++++            <div class="footer-contact">
++++              <h3>Contact Us</h3>
++++              <ul style="list-style: none; margin-top: 10px">
++++                <li style="display: flex; align-items: center">
++++                  <v-icon icon="fas fa-map-marker-alt fa-s" style="color: grey; margin-right: 8px" />
++++                  <p>Jl. Merdeka Timur 4 – 6 Garum Blitar 66182</p>
++++                </li>
++++
++++                <li class="mt-5" style="display: flex; align-items: center">
++++                  <v-icon icon="fas fa-phone fa-s" style="color: grey; margin-right: 8px" />
++++                  <p>0-342-561314</p>
++++                </li>
++++                <li class="mt-5" style="display: flex; align-items: center">
++++                  <v-icon icon="fas fa-clock fa-s" style="color: grey; margin-right: 8px" />
++++                  <p>08.00 - 16.00 (Weekdays)</p>
++++                </li>
++++              </ul>
++++            </div>
++++          </v-col>
++++        </v-row>
++++        <hr style="margin-top: 10px" />
++++        <p class="text-center" style="color: grey; opacity: 60%">&copy; 2023 Seminari Vincentius A Paulo All Rights Reserved.</p>
++++      </v-container>
+  +    </v-footer>
+  +  </div>
+  +</template>
+diff --cc components/Hero.vue
+index f356fa1,f356fa1,0000000..dca653c
+mode 100644,100644,000000..100644
+--- a/components/Hero.vue
++++ b/components/Hero.vue
+@@@@ -1,16 -1,16 -1,0 +1,30 @@@@
+  +<template>
+--   <div class="hero" style="background-color: #e2efff">
+--     <div class="ourprofile-hero d-flex align-center justify-center" style="margin-top: 65px position: relative;">
+--       <v-container-fluid>
+--         <div class="overlay-div" style="padding: 10px">
+--           <div class="content-container">
+--             <h1 style="color: #e2efff; font-size: 36px">Our Profile</h1>
++++  <div class="hero" style="margin-top: 64px">
++++    <div class="" :style="{ position: relative, width: '100%', height: '100vh', backgroundImage: `url(${namabackground})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', color: color }">
++++      <div style="height: 100%; display: flex; align-items: center; background-color: rgba(0, 0, 0, 0.3)">
++++        <div class="overlay-div w-100" style="padding: 10px">
++++          <div class="content-container text-center">
++++            <h1 :style="{ color: color, fontSize: '36px' }">{{ title }}</h1>
+  +          </div>
+  +        </div>
+--       </v-container-fluid>
++++      </div>
+  +    </div>
++++    <div style="background-color: black; width: 100%"></div>
++++
+  +    <div style="position: relative">
+--       <SvgBot :myfill="'#00509a'" :position="'absolute'" :bottom="'0'" :left="'0'" />
++++      <SvgBot :myfill="fill" :position="'absolute'" :bottom="'0'" :left="'0'" />
+  +    </div>
+  +  </div>
+  +</template>
++++
++++<script>
++++export default {
++++  data: () => ({}),
++++  props: {
++++    namabackground: String,
++++    color: String,
++++    title: String,
++++    fill: String,
++++  },
++++};
++++</script>
+diff --cc components/Imgcontainer.vue
+index 8f97940,8f97940,0000000..6d6cdce
+mode 100644,100644,000000..100644
+--- a/components/Imgcontainer.vue
++++ b/components/Imgcontainer.vue
+@@@@ -1,99 -1,99 -1,0 +1,99 @@@@
+  +<template>
+  +  <div class="imgContainer" style="display: flex; flex-wrap: wrap">
+  +    <div class="mb-2 me-3 content" style="position: relative" v-for="(items, index) in nama" :key="index">
+--       <img :src="items.path" class="img-link" style="margin-bottom: 15px" :key="index" />
+--       <div class="text-area" style="position: absolute; bottom: 15px; left: 0; padding: 5px; width: 100%; background: #00509a; opacity: 0.7; color: white">
++++      <img :src="items.path" class="img-link" :key="index" />
++++      <div class="text-area" style="position: absolute; bottom: 4px; left: 0; padding: 5px; width: 100%; background: #00509a; opacity: 0.7; color: white">
+  +        <p class="ms-3">{{ items.title }}</p>
+  +      </div>
+  +    </div>
+  +  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  props: {
+  +    nama: Array,
+  +  },
+  +  data: () => ({
+  +    joinus: [
+  +      {
+  +        title: 'Our vision',
+  +        path: 'assets/ourvision.jpg',
+  +        description:
+  +          'Visi Seminari Garum adalah “Seminari sebagai Sekolah Calon Imam-Kader Gereja yang berkesadaran Global dan Peka Tanggap terhadap Situasi Lokal”. Sedangkan misinya adalah “Mewujudkan Seminari sebagai Komunitas Pembelajar dan Pembinaan yang Membentuk Karakter dan Kompetensi Siswa, yang Unggul dalam Mutu Pendidikan Nilai, Berbasis 26 Nilai Kunci dengan Semangat Visi Seminari”. ',
+  +      },
+  +      {
+  +        title: 'boarding',
+  +        path: 'assets/boarding.jpg',
+  +        description:
+  +          ' Sekolah berasrama (Boarding School) yang menjadi model pembinaan Seminari Garum mengakibatkan tata tertib, jadwal rutin, dan aneka fungsi hidup berasrama yang dijalani oleh para Seminaris terhubung secara utuh dan langsung dengan dinamika persekolahan formal dalam satu sistem pembinaan. Lembaga pendidikan Seminari Garum adalah SMA Katolik Seminari Garum yang berada di bawah naungan yayasan Yohanes Gabriel dan memiliki status terakreditasi A. Di sini, kurikulum yang digunakan adalah kurikulum SMA dan Pasca SMA (Kelas IV dan KPA). Sedangkan, untuk pembaharuan ataupun perubahan kurikulum dapat disesuaikan dengan lingkungan Pendidikan Nasional dan Pendidikan Calon Imam, seiring dengan munculnya tantangan-tantangan baru dalam Gereja dan Masyarakat di tingkat lokal, nasional maupun global.',
+  +      },
+  +      {
+  +        title: 'scholarsips',
+  +        path: 'assets/scholarships.jpg',
+  +        description: 'Beasiswa di seminari garum diberikan khusus kepada siswa yang memenuhi perysaratan nilai akademik yang sudah ditentukan.',
+  +      },
+  +      {
+  +        title: 'Co-Curicullar',
+  +        path: 'assets/cocuricullar.jpg',
+  +        description:
+  +          'Extracuricullar di seminari garum diadakan agar bisa mengembangkan bakat yang dimiliki peserta serta bisa meningkatkan prestasi dan potensi non akademik. Adapun extracuricullar yang ada di seminari ini meliputi billiard,Capoeira,sepakbola,basket',
+  +      },
+  +      {
+  +        title: 'fees',
+  +        path: 'assets/fees.jpg',
+  +        description: 'Pembayaran uang sekolah,uang gedung seminari garum berasal dari para donatur',
+  +      },
+  +      {
+  +        title: 'Tour',
+  +        path: 'assets/tour.jpg',
+  +        description: 'Setahun sekali seminari garum mengadakan tour. Tujuan diadakannya tour ini adalah agar siswa seminari bisa memperkaya pengetahuan dan memperat hubungan antar siswa.',
+  +      },
+  +    ],
+  +    garumLife: [
+  +      {
+  +        title: 'STANNIES LIFE',
+  +        titleimg: 'payments',
+  +        path: 'assets/payments.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+  +        title: 'STANNIES LIFE',
+  +        titleimg: 'College Callendar',
+  +        path: 'assets/collegecalendar.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+  +        title: 'STANNIES LIFE',
+  +        titleimg: 'Student Leave',
+  +        path: 'assets/StudentLeave.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+  +        title: 'STANNIES LIFE',
+  +        titleimg: 'Sports Draw',
+  +        path: 'assets/sportsdraw.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+  +        title: 'STANNIES LIFE',
+  +        titleimg: 'Technology',
+  +        path: 'assets/Technology.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+  +        title: 'STANNIES LIFE',
+  +        titleimg: 'Contact Us',
+  +        path: 'assets/contactus.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +    ],
+  +  }),
+  +};
+  +</script>
+diff --cc components/Navbar.vue
+index f0dee60,f0dee60,0000000..a567399
+mode 100644,100644,000000..100644
+--- a/components/Navbar.vue
++++ b/components/Navbar.vue
+@@@@ -1,163 -1,163 -1,0 +1,188 @@@@
+  +<template>
+  +  <div class="navbar">
+  +    <v-card style="z-index: 3">
+  +      <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
+  +
+--       <v-app-bar style="padding-bottom: 20px">
++++      <v-app-bar style="padding-bottom: 0px; width: 100vw">
+  +        <v-app-bar-nav-icon class="d-lg-none d-xl-flex" variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+--         <v-container>
+--           <div class="d-flex" style="margin-top: 20px">
+--             <v-row style="display: flex; justify-content: center; align-items: center">
+--               <v-col :cols="12" :lg="6">
+--                 <div class="title-container">
+--                   <img src="assets/garumlogo.png" style="height: 50px" alt="" />
+--                   <v-toolbar-title class="ms-4">Seminari vincentius A Paulo</v-toolbar-title>
+--                 </div>
+--               </v-col>
+--               <v-col :cols="12" :lg="6" :md="6">
+--                 <div class="app-bar-link text-right d-none d-lg-flex d-xl-none">
++++        <v-container style="margin-top: 0">
++++          <v-row style="display: flex; justify-content: center; align-items: center">
++++            <v-col :cols="12" :lg="6" style="padding: 0">
++++              <div class="title-container" style="display: flex; flex-wrap: wrap">
++++                <img src="assets/garumlogo.png" style="height: 50px" alt="" />
++++                <v-toolbar-title class="ms-4 toolbar-title" style="flex: 1">Seminari vincentius A Paulo</v-toolbar-title>
++++              </div>
++++            </v-col>
++++            <v-col :cols="12" :lg="6" :md="6">
++++              <div class="app-bar-link text-right d-none d-lg-flex d-xl-none">
++++                <div class="nuxtlink">
+  +                  <NuxtLink to="/" exact :class="{ 'active-link': isCurrentPage('/') }">Home</NuxtLink>
++++                </div>
++++                <div class="nuxtlink">
+  +                  <NuxtLink to="/ourprofile" exact :class="{ 'active-link': isCurrentPage('/ourprofile') }">About Us</NuxtLink>
++++                </div>
++++                <div class="nuxtlink">
+  +                  <NuxtLink to="/joinus" exact :class="{ 'active-link': isCurrentPage('/joinus') }">Join Us</NuxtLink>
+--                   <NuxtLink to="/callendar" exact :class="{ 'active-link': isCurrentPage('/callendar') }">Garum's Life</NuxtLink>
++++                </div>
++++                <div class="nuxtlink">
++++                  <v-menu>
++++                    <template v-slot:activator="{ props }">
++++                      <NuxtLink class="" v-bind="props"> Garum's Life</NuxtLink>
++++                    </template>
++++                    <v-list>
++++                      <v-list-item>
++++                        <v-list-item-title class="dropdownlink"><NuxtLink to="/callendar" :class="{ 'active-link': isCurrentPage('/callendar') }">Callendar</NuxtLink></v-list-item-title>
++++                        <v-list-item-title class="dropdownlink"><NuxtLink to="/gallery" :class="{ 'active-link': isCurrentPage('/gallery') }">Garum Gallery</NuxtLink></v-list-item-title>
++++                      </v-list-item>
++++                    </v-list>
++++                  </v-menu>
++++
+  +                  <NuxtLink to="/article" exact :class="{ 'active-link': isCurrentPage('/article') }">Article & Publication</NuxtLink>
+  +                  <NuxtLink to="/contact" exact :class="{ 'active-link': isCurrentPage('/contact') }">Contact Us</NuxtLink>
+  +                </div>
+--               </v-col>
+--             </v-row>
+--           </div>
++++              </div>
++++            </v-col>
++++          </v-row>
+  +        </v-container>
+  +      </v-app-bar>
+  +
+  +      <v-navigation-drawer v-model="drawer" temporary>
+  +        <v-list>
+  +          <v-list-item>
+  +            <v-menu>
+  +              <template v-slot:activator="{ props }">
+  +                <NuxtLink class="text-grey navstyle" v-bind="props" to="/"> HOME</NuxtLink>
+  +              </template>
+  +            </v-menu>
+  +          </v-list-item>
+  +          <v-list-item>
+  +            <v-menu>
+  +              <template v-slot:activator="{ props }">
+  +                <NuxtLink class="text-grey navstyle" to="/ourprofile" v-bind="props"> ABOUT</NuxtLink>
+  +              </template>
+  +            </v-menu>
+  +          </v-list-item>
+  +          <v-list-item>
+  +            <v-menu>
+  +              <template v-slot:activator="{ props }">
+  +                <NuxtLink class="text-grey navstyle" v-bind="props" to="/joinus"> JOIN US</NuxtLink>
+  +              </template>
+  +            </v-menu>
+  +          </v-list-item>
+  +
+  +          <v-list-item>
+  +            <v-menu>
+  +              <template v-slot:activator="{ props }">
+  +                <NuxtLink class="text-grey navstyle" v-bind="props"> GARUM'S LIFE</NuxtLink>
+  +              </template>
+  +              <v-list>
+  +                <v-list-item>
+  +                  <v-list-item-title><NuxtLink class="navstyle" to="/callendar">Callendar</NuxtLink></v-list-item-title>
+  +                  <v-list-item-title><NuxtLink class="navstyle" to="/gallery">Garum Gallery</NuxtLink></v-list-item-title>
+  +                </v-list-item>
+  +              </v-list>
+  +            </v-menu>
+  +          </v-list-item>
+  +          <v-list-item>
+  +            <v-menu>
+  +              <template v-slot:activator="{ props }">
+  +                <NuxtLink class="text-grey navstyle" v-bind="props" to="/article"> ARTICLE & PUBLICATION</NuxtLink>
+  +              </template>
+  +            </v-menu>
+  +          </v-list-item>
+  +          <v-list-item>
+  +            <v-menu>
+  +              <template v-slot:activator="{ props }">
+  +                <NuxtLink class="text-grey navstyle" v-bind="props" to="/contact"> CONTACT</NuxtLink>
+  +              </template>
+  +            </v-menu>
+  +          </v-list-item>
+  +        </v-list>
+  +      </v-navigation-drawer>
+  +    </v-card>
+  +  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  data: () => ({
+  +    group: false,
+  +    drawer: false,
+  +    navbar: [
+  +      {
+  +        title: 'HOME',
+  +        value: 'home',
+  +      },
+  +      // {
+  +      //   title: 'ABOUT',
+  +      //   value: 'about',
+  +      // },
+  +      // {
+  +      //   title: 'JOIN US',
+  +      //   value: 'join',
+  +      // },
+  +      // {
+  +      //   title: "GARUM'S LIFE",
+  +      //   value: 'garum',
+  +      // },
+  +      // {
+  +      //   title: 'ARTICLE & PUBLICATION',
+  +      //   value: 'article',
+  +      // },
+  +      {
+  +        title: 'CONTACT',
+  +        value: 'contact',
+  +      },
+  +    ],
+  +    dropdown: [
+  +      {
+  +        title: 'ABOUT',
+  +        link1: 'Our Profile',
+  +        link2: 'Our Persons',
+  +        link3: 'Vision & Mission',
+  +      },
+  +    ],
+  +  }),
+  +
+  +  watch: {
+  +    group() {
+  +      this.drawer = false;
+  +    },
+  +  },
+  +  methods: {
+  +    isCurrentPage(route) {
+  +      return this.$route.path === route;
+  +    },
+  +  },
+  +};
+  +</script>
+  +
+  +<style>
+  +.app-bar-link a.active-link {
+  +  /* Ganti dengan gaya khusus untuk tautan aktif */
+  +  color: #00509a;
+  +  font-weight: bold;
+  +}
+  +
+  +.app-bar-link a {
+--   margin-right: 10px;
++++  margin-right: 20px;
++++  font-size: 16px;
+  +  text-decoration: none;
+  +  color: #85868c;
+  +}
+  +.app-bar-link a:hover {
+  +  color: #00509a;
+  +}
+  +@media screen and (max-width: 600px) {
+  +  .app-bar-link a {
+  +    display: none;
+  +  }
+  +}
++++.dropdownlink a {
++++  text-decoration: none;
++++  color: #85868c;
++++}
++++.dropdownlink a:hover {
++++  color: #00509a;
++++}
+  +</style>
+diff --cc components/Ourprofile.vue
+index 470ec3f,470ec3f,0000000..ea7c029
+mode 100644,100644,000000..100644
+--- a/components/Ourprofile.vue
++++ b/components/Ourprofile.vue
+@@@@ -1,55 -1,55 -1,0 +1,100 @@@@
+  +<template>
+--   <div class="ourprofile-home text-white" style="background-color: #00509a; display: flex; flex-direction: column; position: relative">
++++  <div class="ourprofile-home text-white" style="width: 100vw; background-color: #00509a; position: relative">
+  +    <v-container>
+  +      <v-row>
+--         <v-col cols="12" lg="6">
+--           <div class="icon-container2">
++++        <div class="icon-container3 d-flex mb-7 ms-3">
++++          <div class="icon">
+  +            <Svgicon :stroke="'#ffffff'" />
++++          </div>
+  +
+--             <div></div>
+--             <v-icon class="ms-5 me-6" style="color: #ffffff">fas fa-school</v-icon>
+-- 
++++          <v-icon class="ms-3 me-5" style="color: #ffffff; font-size: 20px">fas fa-school</v-icon>
++++          <div class="icon">
+  +            <Svgicon :stroke="'#ffffff'" />
+  +          </div>
++++        </div>
++++      </v-row>
++++
++++      <v-row>
++++        <v-col cols="12" lg="6">
+  +          <h1 class="mb-4">{{ nama[0].title }}</h1>
+  +          <p v-html="nama[0].description.replace(/\n/g, '<br>')"></p>
+  +          <br />
+--           <p class="text-lg-h5">{{ nama[0].name }}</p>
++++          <p class="text-lg-h5 paragraph">{{ nama[0].name }}</p>
+  +          <NuxtLink style="color: white" class="link" to="/ourprofile">{{ link }}</NuxtLink>
+  +        </v-col>
+  +        <v-col cols="12" lg="6" class="text-center">
+--           <div class="imgcover">
+--             <img class="rounded-circle img-thumbnail" :src="nama[0].path" style="width: 80%; margin-bottom: 72px" alt="" />
+--           </div>
++++          <div class="imgcover"><img class="rounded-circle img-thumbnail" :src="nama[0].path" :style="{ width: width, marginBottom: '72px' }" alt="" /></div>
+  +        </v-col>
+  +      </v-row>
+  +    </v-container>
+  +
+  +    <div style="margin-top: 100px">
+  +      <SvgBot :myfill="'#ffffff'" :bottom="'0'" :position="'absolute'" />
+  +    </div>
+  +  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+--   data: () => ({}),
++++  data: () => ({
++++    people: [
++++      {
++++        title: 'Team kami di Seminari Garum',
++++        description: 'Seminari kami merupakan seminari yang solid karena dikelilingi orang yang hebat seperti formator,guru dan staff yang selalu sabar dan setia dalam mendidik dan mengurus seminari kami tercinta',
++++        src: 'assets/rektor.png',
++++        nama: 'Rd.Yuventius Fusi N. ',
++++        jabatan: 'Rektor',
++++      },
++++      {
++++        src: 'assets/kepalasekolah.png',
++++        nama: 'Rp.Tetra Vici.a.,CM ',
++++        jabatan: 'Kepala Sekolah',
++++      },
++++      {
++++        src: 'assets/romorobertus.png',
++++        nama: 'RD. Robertus Theo E.R',
++++        jabatan: 'Ekonom',
++++      },
++++      {
++++        src: 'assets/domus.png',
++++        nama: 'Robertus B. Aditya',
++++        jabatan: 'Domus',
++++      },
++++      {
++++        src: 'assets/formator.png',
++++        nama: 'RD.Agus Raharjo',
++++        jabatan: 'Formator',
++++      },
++++      {
++++        src: 'assets/diakon&formator.png',
++++        nama: 'Diakon vincentius Agsuko W',
++++        jabatan: 'Diakon',
++++      },
++++    ],
++++  }),
+  +  props: {
+  +    nama: Array,
+  +    link: String,
++++    width: String,
+  +  },
+  +};
+  +</script>
+  +<style>
+  +.icon-container {
+  +  margin-top: 10px;
+--   margin-bottom: 50px;
++++
+  +  display: flex; /* Menggunakan flexbox untuk mengatur elemen sejajar */
+  +  align-items: center; /* Memusatkan elemen secara vertikal */
+  +}
+-- .icon-container2 {
+--   margin-bottom: 50px;
+--   display: flex; /* Menggunakan flexbox untuk mengatur elemen sejajar */
+--   align-items: center; /* Memusatkan elemen secara vertikal */
++++
++++@media screen and (max-width: 300px) {
++++  .icon {
++++    width: 50%;
++++  }
++++}
++++@media screen and (min-width: 1280px) {
++++  .paragraph {
++++    margin-bottom: 200px;
++++  }
+  +}
+  +</style>
+diff --cc components/VideoHero.vue
+index 2714e6e,2714e6e,0000000..af609f8
+mode 100644,100644,000000..100644
+--- a/components/VideoHero.vue
++++ b/components/VideoHero.vue
+@@@@ -1,36 -1,36 -1,0 +1,36 @@@@
+  +<template>
+  +  <div class="video-container" style="width: 100%; position: relative">
+  +    <video autoplay loop muted>
+  +      <source src="assets/herovideo.mp4" type="video/mp4" />
+  +    </video>
+--     <div style="top: 5px; position: relative">
++++    <div style="top: 5px; position: relative; z-index: 2">
+  +      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute; bottom: 0; left: 0; width: 100%">
+  +        <path
+  +          fill="#00509a"
+  +          fill-opacity="0.33"
+  +          d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+  +        ></path>
+  +        <path
+  +          fill="#00509a"
+  +          fill-opacity="0.63"
+  +          d="M0,128L48,112C96,96,192,64,288,90.7C384,117,480,203,576,250.7C672,299,768,309,864,309.3C960,309,1056,299,1152,272C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+  +        ></path>
+  +        <path
+  +          fill="#00509a"
+  +          fill-opacity="1"
+  +          d="M0,96L60,112C120,128,240,160,360,170.7C480,181,600,171,720,192C840,213,960,267,1080,277.3C1200,288,1320,256,1380,240L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+  +        ></path>
+  +      </svg>
+  +    </div>
+--     <div class="text-overlay">
++++    <div class="text-overlay" style="background-color: rgba(0, 0, 0, 0.3)">
+  +      <div class="text-content">
+  +        <div>
+  +          <img src="assets/garumlogo.png" style="width: 20%" alt="" />
+  +        </div>
+  +
+  +        <h1 class="ms-2 text-lg-h4 text-xs-h5 text-sm-h5" style="color: white">Welcome to Seminari Vincentius A Paulo</h1>
+  +        <NuxtLink to="/ourprofile" class="navstyle" style="color: white">Your Journey Start Here</NuxtLink>
+  +      </div>
+  +    </div>
+  +  </div>
+  +</template>
+diff --cc layouts/default.vue
+index 02d3c87,02d3c87,0000000..c6eaef2
+mode 100644,100644,000000..100644
+--- a/layouts/default.vue
++++ b/layouts/default.vue
+@@@@ -1,69 -1,69 -1,0 +1,82 @@@@
+  +<template>
+  +  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" />
+  +  <Navbar />
+  +
+  +  <slot />
+  +  <Enrollment />
+  +  <Footer />
+  +</template>
+  +<script>
+  +export default {
+  +  data: () => ({
+  +    group: false,
+  +    drawer: false,
+  +    navbar: [
+  +      {
+  +        title: 'HOME',
+  +        value: 'home',
+  +      },
+  +      // {
+  +      //   title: 'ABOUT',
+  +      //   value: 'about',
+  +      // },
+  +      // {
+  +      //   title: 'JOIN US',
+  +      //   value: 'join',
+  +      // },
+  +      // {
+  +      //   title: "GARUM'S LIFE",
+  +      //   value: 'garum',
+  +      // },
+  +      // {
+  +      //   title: 'ARTICLE & PUBLICATION',
+  +      //   value: 'article',
+  +      // },
+  +      {
+  +        title: 'CONTACT',
+  +        value: 'contact',
+  +      },
+  +    ],
+  +    dropdown: [
+  +      {
+  +        title: 'ABOUT',
+  +        link1: 'Our Profile',
+  +        link2: 'Our Persons',
+  +        link3: 'Vision & Mission',
+  +      },
+  +    ],
+  +  }),
+  +
+  +  watch: {
+  +    group() {
+  +      this.drawer = false;
+  +    },
+  +  },
+  +};
+  +</script>
+  +<style>
+  +.navstyle {
+  +  text-decoration: none;
+  +  color: grey;
+  +}
+  +.navstyle:hover {
+  +  color: blue;
+  +}
+  +.title-container {
+  +  display: flex;
+  +  align-items: center; /* Mengatur vertikal tengah */
+  +}
++++@media screen and (max-width: 410px) {
++++  .toolbar-title {
++++    display: none;
++++  }
++++}
++++.overlay-div {
++++  width: 50%;
++++}
++++@media screen and (max-width: 767px) {
++++  .overlay-div {
++++    width: 100%;
++++  }
++++}
+  +</style>
+diff --cc pages/article.vue
+index 7ad1fdf,7ad1fdf,0000000..43b3062
+mode 100644,100644,000000..100644
+--- a/pages/article.vue
++++ b/pages/article.vue
+@@@@ -1,123 -1,123 -1,0 +1,152 @@@@
+  +<template>
+--   <div class="artikel">
+--     <div class="inputsearc text-center">
+--       <!-- <input style="margin-top: 80px; border: 2px solid red" v-model="searchQuery" @input="search" placeholder="Cari..." /> -->
+--     </div>
++++  <Hero :namabackground="'assets/articlehero.jpg'" :color="'#ffffff'" :title="'Article '" :fill="'#ffffff'" />
+  +
++++  <div class="artikel">
+  +    <v-container>
++++      <div class="icon-container2">
++++        <div class="icon">
++++          <Svgicon :stroke="'#00509a'" />
++++        </div>
++++
++++        <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
++++        <div class="icon">
++++          <Svgicon :stroke="'#00509a'" />
++++        </div>
++++      </div>
+  +      <h1 style="margin-top: 60px">Artikel Terbaru dan terupdate seputar Seminari Vincentius A. Paulo</h1>
+--       <v-text-field variant="outlined" style="box-shadow: 0px 0px 4px #e2efff; padding: 20px 20px 0px 20px" v-model="searchQuery" placeholder="cari artikel disini" prepend-icon="fas fa-search"> </v-text-field>
++++      <v-text-field variant="outlined" style="box-shadow: 0px 0px 4px #e2efff; padding: 28px 20px 0px 20px" v-model="searchQuery" placeholder="cari artikel disini" prepend-icon="fas fa-search"> </v-text-field>
+  +
+  +      <v-row style="margin-top: 20px">
+--         <v-col v-for="(image, index) in searchResults" :key="index" :cols="12" :lg="6">
+--           <div class="article-box">
+--             <div class="article-head mb-4">
+--               <h3>{{ image.title }}</h3>
+--               <p>{{ image.detail }}</p>
++++        <v-col :cols="12">
++++          <div class="" style="width: 100%; display: flex; flex-wrap: wrap">
++++            <div class="article-box" v-for="(image, index) in searchResults" :key="index">
++++              <div style="padding: 16px">
++++                <div class="article-head mb-4" style="width: 100%">
++++                  <div>
++++                    <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ image.title }}</h3>
++++                    <p>{{ image.detail }}</p>
++++                  </div>
++++                </div>
++++                <img :src="image.image" alt="" style="width: 100%" />
++++                <p>{{ image.deskripsi }}</p>
++++                <div>
++++                  <button class="article-btn">{{ image.button }}</button>
++++                </div>
++++              </div>
+  +            </div>
+--             <img :src="image.image" alt="" style="width: 80%" />
+--             <p>{{ image.deskripsi }}</p>
+--             <button class="article-btn">{{ image.button }}</button>
+  +          </div>
+  +        </v-col>
+  +      </v-row>
+  +    </v-container>
+  +  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  data: () => ({
+  +    searchQuery: '',
+  +    article: [
+  +      {
+--         title: 'Rekoleksi Seminari Garum, 12-13 November 2016',
++++        title:
++++          'Rekoleksi Seminari Garum, 12-13 November 2016aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+  +        detail: '16:26 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: 'Berilah telinga kepada perkataanku, ya Tuhan, indahkanlah keluh kesahku. Perhatikanlah teriakku minta tolong, ya Rajaku dan Allahku, sebab...',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +      {
+--         title: 'Menanamkan Panggilan pada Siswa SDK St. Yohanes Gabriel, Surabaya',
++++        title: 'Menanamkan Panggilan pada Siswa SDK St. Yohanes Gabriel, Surabayaaaaaaaa',
+  +        detail: '16:25 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: 'Pada tanggal 29 Oktober hingga 30 Oktober 2016, keluarga besar Seminari Garum kedatangan rombongan tamu dari SDK St. Yohanes Gabriel, Surab...',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +      {
+  +        title: 'Lelah yang menyenangkan',
+  +        detail: '16:26 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: '“Berilah telinga kepada perkataanku, ya Tuhan, indahkanlah keluh kesahku. Perhatikanlah teriakku minta tolong, ya Rajaku dan Allahku, sebab...',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +      {
+  +        title: 'Menemukan mutiara di katedral keuskupan surabaya',
+  +        detail: '16:26 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: 'Saat akhir pekan, rasanya menyenangkan bila mendengar kabar bahwa ada kunjungan tamu  ke Seminari Garum. Kebetulan pada Minggu (13/11) yang...',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +      {
+  +        title: 'Menabur benih panggilan di Paroki Aloysius Gonzaga',
+  +        detail: '16:26 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: 'Aksi Panggilan 2016 kali ini diadakan di empat paroki yang ada di Surabaya. Surabaya? Ya, ibu kota Jawa Timur ini lah yang  kali ini akan d...',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +      {
+  +        title: 'Kunjungan Rekat-OMK Paroki St.Yosef, Ngawi ke seminari Garum',
+  +        detail: '16:26 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: 'Hari minggu, 30 Oktober 2016 adalah hari yang cukup dinanti-nantikan oleh kami seminaris yang berasal dari kota keripik temp...',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +      {
+  +        title: 'Kunjungan Lingkungan Santo Vincentius a Paulo, Paroki Santo Paulus Juanda',
+  +        detail: '16:26 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: 'Minggu (23/10) terlihat berjalan seperti biasa. Pagi hari kami melaksanakan misa harian, sarapan dan kegiatan – kegiatan yang biasa kam...',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +      {
+  +        title: 'Kunjungan Lingkungan Santo Vincentius a Paulo, Paroki Santo Paulus Juanda',
+  +        detail: '16:26 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: 'Minggu (23/10) terlihat berjalan seperti biasa. Pagi hari kami melaksanakan misa harian, sarapan dan kegiatan – kegiatan yang biasa kam...',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +      {
+  +        title: 'Sebuah Sajak (Dengan Segenap Rasa ini)',
+  +        detail: '16:26 | Unknown',
+  +        image: 'assets/rekoleksiseminari.jpg',
+  +        deskripsi: 'Sebuah Sajak (Dengan Segenap Rasa ini) Oleh: Gabriel Mario Lefaan Sajak sederhana ini kutulis sembari terduduk diam Terduduk di..',
+  +        button: 'Baca Selengkapnya',
+  +      },
+  +    ],
+  +  }),
+  +  computed: {
+  +    searchResults() {
+  +      return this.article.filter((image) => image.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
+  +    },
+  +  },
+  +};
+  +</script>
+  +<style>
+  +.article-box {
+--   border: 3px solid #e2efff; /* Menambahkan garis tepi untuk frame */
+--   border-radius: 10px; /* Membuat sudut frame melengkung */
+--   padding: 20px; /* Ruang di dalam frame */
+--   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk frame */
+--   transition: box-shadow 0.3s ease; /* Efek bayangan berubah saat dihover */
+--   height: 100%;
++++  border: 1px solid rgba(0, 0, 0, 0.3);
++++  border-radius: 20px;
++++  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+  +}
+  +.article-btn {
+  +  background-color: #e2efff;
+  +  border-radius: 10px;
+  +  padding: 15px;
+  +  margin-top: 10px;
+  +}
+  +.article-btn:hover {
+  +  color: blue;
+  +}
++++@media screen and (max-width: 1280px) {
++++  .article-box {
++++    width: 100%;
++++    margin-bottom: 24px;
++++    margin-left: 4px;
++++    margin-right: 4px;
++++  }
++++}
++++@media screen and (min-width: 1281px) {
++++  .article-box {
++++    width: 48%;
++++    margin-right: 16px;
++++    margin-bottom: 24px;
++++  }
++++}
+  +</style>
+diff --cc pages/callendar.vue
+index 9761892,9761892,ef32da3..a474c37
+--- a/pages/callendar.vue
++++ b/pages/callendar.vue
+@@@@ -1,51 -1,51 -1,37 +1,11 @@@@
+   <template>
+--   <div class="callendar">
+--     <div class="callendarhero" style="margin-top: 60px">
+--       <v-container>
+--         <v-row>
+--           <v-col> </v-col>
+--         </v-row>
+--       </v-container>
+--     </div>
+--     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--       <path
+--         fill="#e2efff"
+--         fill-opacity="1"
+--         d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--       ></path>
+--     </svg>
+  -  <v-container>
+  -    <div class="icon-container2 ms-3">
+  -      <div class="icon">
+  -        <Svgicon :stroke="'#00509a'" />
+  -      </div>
++++  <div class="callendar mt-1">
++++    <Hero :namabackground="'assets/callendar.jpg'" :color="'#ffffff'" :title="'Callendar'" :fill="'#ffffff'" />
+  +  </div>
+   
+  -      <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
+  -      <div class="icon">
+  -        <Svgicon :stroke="'#00509a'" />
+  -      </div>
+  -    </div>
+  -    <div style="width: 100%; display: flex; flex-wrap: wrap">
+  -      <h1 style="margin-top: 10px; margin-bottom: 20px; font-size: 20px">Kalendar Akademik Bulanan Seminari Vincentius A Paulo</h1>
+  -    </div>
+  -
+  -    <v-text-field variant="outlined" style="padding: 16px 12px 0px 12px; margin-top: 80px; box-shadow: 0 2px 4px #e2efff" v-model="searchQuery" placeholder="Ketik Judul Aktivitas" prepend-icon="fas fa-search"> </v-text-field>
+  -    <v-table class="mt-13">
+  -      <thead>
+  -        <tr>
+  -          <th class="text-left" style="border: 1px solid black">No</th>
+  -          <th class="text-left" style="border: 1px solid black">Tanggal</th>
+  -          <th class="text-left" style="border: 1px solid black">Aktivitas</th>
+  -        </tr>
+  -      </thead>
+  -      <tbody>
+  -        <tr v-for="(item, index) in searchResults" :key="index">
+  -          <td style="border: 1px solid black">{{ item.no }}</td>
+  -          <td style="border: 1px solid black">{{ item.tanggal }}</td>
+  -          <td style="border: 1px solid black">{{ item.aktivitas }}</td>
+  -        </tr>
+  -      </tbody>
+  -    </v-table>
+  -  </v-container>
+  +  <div class="calendar">
+--     <v-container>
+--       <h1 style="margin-top: 10px; margin-bottom: 20px">Kalendar Akademik Bulanan Seminari Vincentius A Paulo</h1>
+--       <v-text-field style="margin-top: 80px; box-shadow: 0 2px 4px #e2efff" v-model="searchQuery" placeholder="Ketik Judul Aktivitas" prepend-icon="fas fa-search"> </v-text-field>
+--       <v-table>
+--         <thead>
+--           <tr>
+--             <th class="text-left" style="border: 1px solid black">No</th>
+--             <th class="text-left" style="border: 1px solid black">Tanggal</th>
+--             <th class="text-left" style="border: 1px solid black">Aktivitas</th>
+--           </tr>
+--         </thead>
+--         <tbody>
+--           <tr v-for="(item, index) in searchResults" :key="index">
+--             <td style="border: 1px solid black">{{ item.no }}</td>
+--             <td style="border: 1px solid black">{{ item.tanggal }}</td>
+--             <td style="border: 1px solid black">{{ item.aktivitas }}</td>
+--           </tr>
+--         </tbody>
+--       </v-table>
+--     </v-container>
+-- 
+--     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--       <path
+--         fill="#e2efff"
+--         fill-opacity="1"
+--         d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--       ></path>
+--     </svg>
++++    <Callendar />
+  +  </div>
+   </template>
+   
+   <script>
+diff --cc pages/contact.vue
+index 30cf204,30cf204,0000000..58d7c0e
+mode 100644,100644,000000..100644
+--- a/pages/contact.vue
++++ b/pages/contact.vue
+@@@@ -1,92 -1,92 -1,0 +1,90 @@@@
+  +<template>
+  +  <div class="contact">
+--     <div class="contact-hero d-flex align-center justify-center">
+--       <v-container>
+--         <h1 class="text-center contact-text">Contact Us</h1>
+--       </v-container>
+--     </div>
+--     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--       <path
+--         fill="#e2efff"
+--         fill-opacity="1"
+--         d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--       ></path>
+--     </svg>
++++    <Hero :namabackground="'assets/contacthero.jpg'" :title="'Contact Us'" :fill="'white'" :color="'white'" />
+  +  </div>
+  +  <div class="contact-details">
+  +    <v-container>
+  +      <v-row>
+  +        <v-col>
+--           <h1 class="text-center">Info detail kontak kami</h1>
++++          <div class="icon-container2">
++++            <div class="icon">
++++              <Svgicon :stroke="'#00509a'" />
++++            </div>
++++
++++            <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
++++            <div class="icon">
++++              <Svgicon :stroke="'#00509a'" />
++++            </div>
++++          </div>
++++          <h1 class="text-start">Info detail kontak kami</h1>
+  +          <div class="detailkontak" style="margin-top: 20px">
+--             <h3>No telp kami</h3>
++++            <h3 class="mb-1">No telp kami :</h3>
+  +            <p>0-342-561314</p>
+--             <h3>Alamat kami :</h3>
++++            <h3 class="mb-1">Alamat kami :</h3>
+  +            <p>Jl. Merdeka Timur 4 – 6 Garum Blitar 66182</p>
+--             <h3>Tepatnya di :</h3>
+--             <iframe
+--               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.267565465597!2d112.22347877934571!3d-8.0741697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ecda96e70e91%3A0x75eec414b859b5a1!2sSMAK%20Seminari%20Garum!5e0!3m2!1sen!2sid!4v1696855580561!5m2!1sen!2sid"
+--               width="100%"
+--               height="450"
+--               style="border: 0"
+--               allowfullscreen=""
+--               loading="lazy"
+--               referrerpolicy="no-referrer-when-downgrade"
+--             ></iframe>
++++            <h3 class="mt-4">Tepatnya di :</h3>
++++            <div class="mt-10">
++++              <iframe
++++                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.267565465597!2d112.22347877934571!3d-8.0741697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ecda96e70e91%3A0x75eec414b859b5a1!2sSMAK%20Seminari%20Garum!5e0!3m2!1sen!2sid!4v1696855580561!5m2!1sen!2sid"
++++                width="100%"
++++                height="450"
++++                style="border: 0"
++++                allowfullscreen=""
++++                loading="lazy"
++++                referrerpolicy="no-referrer-when-downgrade"
++++              ></iframe>
++++            </div>
+  +          </div>
+  +        </v-col>
+  +      </v-row>
+  +    </v-container>
+--     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--       <path
+--         fill="#e2efff"
+--         fill-opacity="1"
+--         d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--       ></path>
+--     </svg>
+  +  </div>
+  +  <div class="contact-form">
+--     <h2 class="text-center" style="margin-top: 15px">Mau tau lebih banyak tentang kita?</h2>
+  +    <v-container>
++++      <div class="icon-container2">
++++        <div class="icon">
++++          <Svgicon :stroke="'#00509a'" />
++++        </div>
++++
++++        <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
++++        <div class="icon">
++++          <Svgicon :stroke="'#00509a'" />
++++        </div>
++++      </div>
++++
++++      <h2 class="text-left mb-10" style="margin-top: 15px">Mau tau lebih banyak tentang kita?</h2>
+  +      <v-row>
+  +        <v-col>
+  +          <v-form @submit="submitForm" style="margin-top: 20px">
+--             <v-text-field v-model="name" placeholder="Ketik nama anda" required prepend-icon="fas fa-id-card"></v-text-field>
+--             <v-text-field v-model="email" placeholder="Ketik alamat email anda" required prepend-icon="fas fa-envelope"></v-text-field>
+--             <v-textarea v-model="message" placeholder="Ketik pesan anda" required prepend-icon="fa fa-comments"></v-textarea>
++++            <v-text-field class="mb-3" v-model="name" placeholder="Ketik nama anda" required prepend-icon="fas fa-id-card"></v-text-field>
++++            <v-text-field class="mb-3" v-model="email" placeholder="Ketik alamat email anda" required prepend-icon="fas fa-envelope"></v-text-field>
++++            <v-textarea class="mb-5" v-model="message" placeholder="Ketik pesan anda" required prepend-icon="fa fa-comments"></v-textarea>
+  +            <center><v-btn @click="kirimpesan" type="submit" color="#e2efff">Kirim</v-btn></center>
+  +          </v-form>
+  +        </v-col>
+  +      </v-row>
+  +    </v-container>
+--     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--       <path
+--         fill="#e2efff"
+--         fill-opacity="1"
+--         d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--       ></path>
+--     </svg>
+  +  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  methods: {
+  +    kirimpesan() {
+  +      alert('pesan terkirim');
+  +    },
+  +  },
+  +};
+  +</script>
+  +
+  +<style>
+  +.contact-hero {
+  +  background-image: url('assets/contacthero.jpg');
+  +  background-size: cover;
+  +  height: 600px;
+  +  width: 100%;
+  +}
+  +.contact-text {
+  +  color: #e2efff;
+  +}
+  +</style>
+diff --cc pages/gallery.vue
+index d505b54,d505b54,0000000..54f8cea
+mode 100644,100644,000000..100644
+--- a/pages/gallery.vue
++++ b/pages/gallery.vue
+@@@@ -1,100 -1,100 -1,0 +1,104 @@@@
+  +<template>
++++  <Hero :namabackground="'assets/gallery.jpg'" :title="'Gallery Garum'" :color="'#00509a'" :fill="'#ffffff'" />
+  +  <div>
+  +    <v-container style="margin-top: 80px">
++++      <div class="icon-container2">
++++        <div class="icon">
++++          <Svgicon :stroke="'#00509a'" />
++++        </div>
++++
++++        <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
++++        <div>
++++          <Svgicon :stroke="'#00509a'" />
++++        </div>
++++      </div>
+  +      <h1>Kumpulan Kegiatan yang ada di Seminari Vincentius A. Paulo</h1>
+--       <v-text-field style="margin-top: 80px; box-shadow: 0 2px 4px #e2efff" v-model="searchQuery" placeholder="Ketik Judul event" prepend-icon="fas fa-search">
++++      <v-text-field variant="outlined" style="padding: 16px 12px 0px 12px; margin-top: 80px; box-shadow: 0 2px 4px #e2efff" v-model="searchQuery" placeholder="Ketik Judul event" prepend-icon="fas fa-search">
+  +        <template v-slot:prepend> </template>
+  +      </v-text-field>
+--       <v-row>
++++      <v-row style="margin-top: 24px">
+  +        <v-col v-for="(image, index) in searchResults" :key="index" cols="12" sm="6" md="4" lg="3">
+--           <v-card class="image-card">
++++          <v-card class="image-card" style="margin-bottom: 12px; margin-right: 12px">
+  +            <v-img :src="image.path" aspect-ratio="1.5"></v-img>
+  +            <v-card-title>{{ image.title }}</v-card-title>
+  +          </v-card>
+  +        </v-col>
+  +      </v-row>
+  +    </v-container>
+--     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--       <path
+--         fill="#e2efff"
+--         fill-opacity="1"
+--         d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--       ></path>
+--     </svg>
+  +  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  data: () => ({
+  +    searchQuery: '',
+  +    gallery: [
+  +      {
+  +        title: 'Pelatihan Pgu',
+  +        path: 'assets/herobackground.jpg',
+  +        description:
+  +          'Visi Seminari Garum adalah “Seminari sebagai Sekolah Calon Imam-Kader Gereja yang berkesadaran Global dan Peka Tanggap terhadap Situasi Lokal”. Sedangkan misinya adalah “Mewujudkan Seminari sebagai Komunitas Pembelajar dan Pembinaan yang Membentuk Karakter dan Kompetensi Siswa, yang Unggul dalam Mutu Pendidikan Nilai, Berbasis 26 Nilai Kunci dengan Semangat Visi Seminari”. ',
+  +      },
+  +      {
+  +        title: 'Charity Concert',
+  +        path: 'assets/charitygarum.jpeg',
+  +        description:
+  +          ' Sekolah berasrama (Boarding School) yang menjadi model pembinaan Seminari Garum mengakibatkan tata tertib, jadwal rutin, dan aneka fungsi hidup berasrama yang dijalani oleh para Seminaris terhubung secara utuh dan langsung dengan dinamika persekolahan formal dalam satu sistem pembinaan. Lembaga pendidikan Seminari Garum adalah SMA Katolik Seminari Garum yang berada di bawah naungan yayasan Yohanes Gabriel dan memiliki status terakreditasi A. Di sini, kurikulum yang digunakan adalah kurikulum SMA dan Pasca SMA (Kelas IV dan KPA). Sedangkan, untuk pembaharuan ataupun perubahan kurikulum dapat disesuaikan dengan lingkungan Pendidikan Nasional dan Pendidikan Calon Imam, seiring dengan munculnya tantangan-tantangan baru dalam Gereja dan Masyarakat di tingkat lokal, nasional maupun global.',
+  +      },
+  +      {
+  +        title: 'Veni Mecum Festival',
+  +        path: 'assets/venimecum.jpg',
+  +        description: 'Beasiswa di seminari garum diberikan khusus kepada siswa yang memenuhi perysaratan nilai akademik yang sudah ditentukan.',
+  +      },
+  +      {
+  +        title: 'Pembinaan Komunitas',
+  +        path: 'assets/hpk.jpg',
+  +        description:
+  +          'Extracuricullar di seminari garum diadakan agar bisa mengembangkan bakat yang dimiliki peserta serta bisa meningkatkan prestasi dan potensi non akademik. Adapun extracuricullar yang ada di seminari ini meliputi billiard,Capoeira,sepakbola,basket',
+  +      },
+  +      {
+  +        title: 'Pesta Nama',
+  +        path: 'assets/pestanama.jpg',
+  +        description: 'Pembayaran uang sekolah,uang gedung seminari garum berasal dari para donatur',
+  +      },
+  +      {
+  +        title: 'Edufair Sanmar Kediri',
+  +        path: 'assets/edufairsanmar.jpg',
+  +        description: 'Setahun sekali seminari garum mengadakan tour. Tujuan diadakannya tour ini adalah agar siswa seminari bisa memperkaya pengetahuan dan memperat hubungan antar siswa.',
+  +      },
+  +      {
+  +        title: 'Sv Games 2023',
+  +        path: 'assets/svgames2023.jpg',
+  +        description: 'Setahun sekali seminari garum mengadakan tour. Tujuan diadakannya tour ini adalah agar siswa seminari bisa memperkaya pengetahuan dan memperat hubungan antar siswa.',
+  +      },
+  +      {
+  +        title: 'Asesmen nasional 2023',
+  +        path: 'assets/asesmennasional2023.jpg',
+  +        description: 'Setahun sekali seminari garum mengadakan tour. Tujuan diadakannya tour ini adalah agar siswa seminari bisa memperkaya pengetahuan dan memperat hubungan antar siswa.',
+  +      },
+  +    ],
+  +    garumLife: [
+  +      {
+  +        title: 'Life at Garum',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +    ],
+  +  }),
+  +  computed: {
+  +    searchResults() {
+  +      return this.gallery.filter((image) => image.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
+  +    },
+  +  },
+  +};
+  +</script>
+  +
+  +<style>
+  +.image-card {
+  +  transition: transform 0.3s ease; /* Efek transformasi saat hover */
+  +}
+  +
+  +.image-card:hover {
+  +  transform: scale(1.05); /* Memperbesar gambar saat hover */
+  +}
+  +</style>
+diff --cc pages/index.vue
+index b048c0f,b048c0f,0000000..a55943e
+mode 100644,100644,000000..100644
+--- a/pages/index.vue
++++ b/pages/index.vue
+@@@@ -1,311 -1,311 -1,0 +1,297 @@@@
+  +<template>
+--   <div class="hero" style="background-color: #e2edff; margin-top: 84px">
++++  <div class="hero" style="background-color: #e2edff; margin-top: 64px">
+  +    <VideoHero />
+  +  </div>
+  +
+--   <Ourprofile :nama="about" :link="'Read More'" />
++++  <Ourprofile :nama="about" :link="'Read More'" :width="'80%'" />
+  +
+  +  <div class="bepartof">
+  +    <v-container>
+  +      <v-row>
+  +        <v-col :cols="12" :lg="6">
+  +          <Imgcontainer :nama="joinus" />
+  +        </v-col>
+-- 
+--         <v-col :cols="12" :lg="6">
+--           <div class="icon-container">
+--             <Svgicon :stroke="'#00509a'" />
+--             <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
+--             <Svgicon :stroke="'#00509a'" />
+--           </div>
+--           <h1 class="mb-6 text-lg-h4">Join Us At Stannies</h1>
+--           <i><p class="mb-3">Education is not the learning of facts, but the training of the mind to think.</p></i>
+--           <b><p>Albert Einstein</p></b>
+--           <p class="mt-10" style="line-height: 2">
+--             The consistency of outstanding HSC results for boys of all academic levels continues to be the hallmark of the education at St Stanislaus’ College. The most recent educational research points to a significant change in the
+--             skills required for employment by 2030, with the reduction in the need for workers to complete routine, manual tasks and an increase in the time workers spend on solving strategic problems and thinking creatively. As such,
+--             Stannies has embarked on a number of programs geared to developing enterprise skills such as problem solving, creativity, critical thinking, communication, digital and financial literacy which are transferable into many
+--             employment areas.
+--           </p>
+-- 
+--           <v-btn style="margin-top: 30px">
+--             Our Curriculum
+--             <v-icon class="ms-3"> fas fa-arrow-right</v-icon>
+--           </v-btn>
+--         </v-col>
++++        <Joinusdesc />
+  +      </v-row>
+  +    </v-container>
+  +  </div>
+  +
+  +  <div class="Garum-life" style="margin-top: 90px; margin-bottom: 200px">
+  +    <v-container>
+  +      <v-row>
+  +        <v-col :cols="12" :lg="6">
+--           <div class="bepartof-content" style="margin-left: 20px; margin-right: 15px; margin-top: 40px; width: 100%">
+--             <div class="icon-container2">
+--               <Svgicon :stroke="'#00509a'" />
+-- 
+--               <v-icon class="ms-5 me-6" style="color: #00509a">fas fa-school</v-icon>
++++          <div class="bepartof-content" style="margin-right: 15px; margin-top: 40px; width: 100%">
++++            <div class="icon-container3">
++++              <div class="icon ms-4">
++++                <Svgicon :stroke="'#00509a'" />
++++              </div>
+  +
+--               <Svgicon :stroke="'#00509a'" />
++++              <v-icon class="ms-3 me-5" style="color: #00509a">fas fa-school</v-icon>
++++              <div>
++++                <Svgicon :stroke="'#00509a'" />
++++              </div>
+  +            </div>
+  +            <h1 class="mb-3 text-lg-h4">Stannies Life</h1>
+  +
+  +            <p class="mt-8">
+  +              Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during
+  +              their time as students at the College.
+  +            </p>
+  +            <p style="margin-top: 50px">Stannies Life is your guide to the traditions, annual events, diverse activities, and practical aspects of daily student life.</p>
+  +
+  +            <div class="d-flex flex-row mt-5" style="width: 100%; flex-wrap: wrap">
+  +              <v-btn style="margin-top: 30px; margin-right: 30px; height: 50px">
+  +                Latest newletter
+  +                <v-icon class="ms-3"> fas fa-arrow-right</v-icon>
+  +              </v-btn>
+  +              <v-btn style="margin-top: 30px; height: 50px">
+  +                P & F and Old boys
+  +                <v-icon class="ms-3"> fas fa-arrow-right</v-icon>
+  +              </v-btn>
+  +            </div>
+  +          </div>
+  +        </v-col>
+  +        <v-col :cols="12" :lg="6">
+  +          <Imgcontainer :nama="garumLife" />
+  +        </v-col>
+  +      </v-row>
+  +    </v-container>
+  +  </div>
+  +
+  +  <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  +    <path
+  +      fill="#e2efff"
+  +      fill-opacity="1"
+  +      d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+  +    ></path>
+  +  </svg> -->
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  data: () => ({
+  +    about: [
+  +      {
+  +        title: 'Welcome To Seminari Vincentius a paulo',
+  +        description:
+  +          'Seminari Menengah St. Vincentius  a  Paulo terletak di Kecamatan Garum, Kabupaten Blitar, Jawa Timur. Seperti Seminari di Indonesia kebanyakan , letak Seminari ini jauh dari keramaian kota, sehingga proses pembinaan maupun belajar mengajar  dapat dilaksanakan dengan tenang, terfokus, dan menjadi prioritas utama. Sampai saat ini, jumlah Seminaris Garum masih di atas angka 100 per tahunnya,  dan peminat untuk masuk Seminari ini masih tergolong besar.',
+  +        path: 'assets/person.jpg',
+  +      },
+  +    ],
+  +    joinus: [
+  +      {
+  +        title: 'Our vision',
+  +        path: 'assets/ourvision.jpg',
+  +        description:
+  +          'Visi Seminari Garum adalah “Seminari sebagai Sekolah Calon Imam-Kader Gereja yang berkesadaran Global dan Peka Tanggap terhadap Situasi Lokal”. Sedangkan misinya adalah “Mewujudkan Seminari sebagai Komunitas Pembelajar dan Pembinaan yang Membentuk Karakter dan Kompetensi Siswa, yang Unggul dalam Mutu Pendidikan Nilai, Berbasis 26 Nilai Kunci dengan Semangat Visi Seminari”. ',
+  +      },
+  +      {
+  +        title: 'boarding',
+  +        path: 'assets/boarding.jpg',
+  +        description:
+  +          ' Sekolah berasrama (Boarding School) yang menjadi model pembinaan Seminari Garum mengakibatkan tata tertib, jadwal rutin, dan aneka fungsi hidup berasrama yang dijalani oleh para Seminaris terhubung secara utuh dan langsung dengan dinamika persekolahan formal dalam satu sistem pembinaan. Lembaga pendidikan Seminari Garum adalah SMA Katolik Seminari Garum yang berada di bawah naungan yayasan Yohanes Gabriel dan memiliki status terakreditasi A. Di sini, kurikulum yang digunakan adalah kurikulum SMA dan Pasca SMA (Kelas IV dan KPA). Sedangkan, untuk pembaharuan ataupun perubahan kurikulum dapat disesuaikan dengan lingkungan Pendidikan Nasional dan Pendidikan Calon Imam, seiring dengan munculnya tantangan-tantangan baru dalam Gereja dan Masyarakat di tingkat lokal, nasional maupun global.',
+  +      },
+  +      {
+  +        title: 'scholarsips',
+  +        path: 'assets/scholarships.jpg',
+  +        description: 'Beasiswa di seminari garum diberikan khusus kepada siswa yang memenuhi perysaratan nilai akademik yang sudah ditentukan.',
+  +      },
+  +      {
+  +        title: 'Co-Curicullar',
+  +        path: 'assets/cocuricullar.jpg',
+  +        description:
+  +          'Extracuricullar di seminari garum diadakan agar bisa mengembangkan bakat yang dimiliki peserta serta bisa meningkatkan prestasi dan potensi non akademik. Adapun extracuricullar yang ada di seminari ini meliputi billiard,Capoeira,sepakbola,basket',
+  +      },
+  +      {
+  +        title: 'fees',
+  +        path: 'assets/fees.jpg',
+  +        description: 'Pembayaran uang sekolah,uang gedung seminari garum berasal dari para donatur',
+  +      },
+  +      {
+  +        title: 'Tour',
+  +        path: 'assets/tour.jpg',
+  +        description: 'Setahun sekali seminari garum mengadakan tour. Tujuan diadakannya tour ini adalah agar siswa seminari bisa memperkaya pengetahuan dan memperat hubungan antar siswa.',
+  +      },
+  +    ],
+  +    garumLife: [
+  +      {
+--         title: 'STANNIES LIFE',
+--         titleimg: 'payments',
++++        titleimg: 'STANNIES LIFE',
++++        title: 'payments',
+  +        path: 'assets/payments.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+--         title: 'STANNIES LIFE',
+--         titleimg: 'College Callendar',
++++        titleimg: 'STANNIES LIFE',
++++        title: 'College Callendar',
+  +        path: 'assets/collegecalendar.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+--         title: 'STANNIES LIFE',
+--         titleimg: 'Student Leave',
++++        titleimg: 'STANNIES LIFE',
++++        title: 'Student Leave',
+  +        path: 'assets/StudentLeave.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+--         title: 'STANNIES LIFE',
+--         titleimg: 'Sports Draw',
++++        titleimg: 'STANNIES LIFE',
++++        title: 'Sports Draw',
+  +        path: 'assets/sportsdraw.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+--         title: 'STANNIES LIFE',
+--         titleimg: 'Technology',
++++        titleimg: 'STANNIES LIFE',
++++        title: 'Technology',
+  +        path: 'assets/Technology.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +      {
+--         title: 'STANNIES LIFE',
+--         titleimg: 'Contact Us',
++++        titleimg: 'STANNIES LIFE',
++++        title: 'Contact Us',
+  +        path: 'assets/contactus.jpg',
+  +        description:
+  +          'Our Stannies students, both past and present, are the lifeblood of the College. Our Stannies community of parents, families, extended family and College staff are here to support, encourage and celebrate our young men during their time as students at the College.',
+  +      },
+  +    ],
+  +  }),
+  +};
+  +</script>
+  +<style>
++++.icon-container3 {
++++  display: flex;
++++  margin-bottom: 32px;
++++}
+  +.video-container {
+--   width: 100%;
+--   height: 100%;
++++  width: 100vw;
++++  height: 100vh;
+  +  position: relative;
+  +}
+  +.video-container video {
+--   width: 100%;
+--   height: 100%;
++++  width: 100vw;
++++  height: 100vh;
+  +  object-fit: cover;
+  +  opacity: 80%;
+  +  z-index: 2;
+  +}
+  +
+  +.text-overlay {
+  +  position: absolute;
+  +  top: 0;
+  +  left: 0;
+  +  width: 100%;
+  +  height: 100%;
+  +  display: flex;
+  +  justify-content: center;
+  +  align-items: center;
+  +  flex-direction: column;
+  +  text-align: center;
+  +
+  +  /* top: 10%;
+  +  left: 50%;
+  +  transform: translate(-50%, -50%);
+  +  text-align: center;
+  +  color: white;
+  +  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  +}
+  +
+  +.text-overlay h1 {
+  +  font-size: 36px;
+  +  margin-bottom: 10px;
+  +}
+  +
+  +.text-overlay p {
+  +  font-size: 18px;
+  +}
+  +
+  +.image {
+  +  max-width: 100%;
+  +  height: auto;
+  +}
+  +.imgContainer {
+  +  display: flex;
+  +  align-items: start;
+  +}
+  +
+  +.imgContainer img {
+  +  margin-right: 10px;
+  +}
+  +.herobackground {
+  +  position: relative;
+  +  background-image: url('../public/assets/enrollment-cover.jpg');
+  +  background-size: cover;
+  +  background-repeat: no-repeat;
+  +  width: 100%;
+  +  height: 500px;
+  +}
+  +/* .overlay-div {
+  +  position: absolute;
+  +  top: 50%;
+  +  left: 50%;
+  +  transform: translate(-50%, -50%);
+  +  width: 50%;
+  +  height: 70%;
+  +  opacity: 80%;
+  +  background-color: #e2efff;
+  +} */
+  +
+  +hr {
+  +  opacity: 30%;
+  +  margin-bottom: 20px;
+  +}
+  +
+  +@media screen and (max-width: 600px) {
+  +  .text-content h1 {
+  +    font-size: 20px;
+  +  }
+  +  .imgContainer {
+  +    flex-direction: column;
+  +    order: 2;
+  +  }
+  +  .imgContainer img {
+--     width: 90%;
++++    width: 100%;
+  +  }
+  +  .bepartof-content {
+  +    order: 1;
+  +  }
+  +  .content {
+  +    width: 100%;
+  +  }
+  +  .content2 {
+  +    width: 100%;
+  +  }
+  +}
+  +@media screen and (min-width: 600px) {
+  +  .imgContainer img {
+  +    width: 100%;
+  +  }
+  +  .content2 {
+  +    width: 47%;
+  +  }
+  +  .content {
+  +    width: 47%;
+  +  }
+  +}
+  +.link:hover {
+  +  color: blue;
+  +}
+  +
+  +.svg2 {
+  +  width: 15px;
+  +  height: 15px;
+  +}
+  +.icon-container {
+  +  margin-top: 10px;
+--   margin-bottom: 50px;
++++
+  +  display: flex; /* Menggunakan flexbox untuk mengatur elemen sejajar */
+  +  align-items: center; /* Memusatkan elemen secara vertikal */
+  +}
+  +.icon-container2 {
+  +  margin-bottom: 50px;
+  +  display: flex; /* Menggunakan flexbox untuk mengatur elemen sejajar */
+  +  align-items: center; /* Memusatkan elemen secara vertikal */
+  +}
+  +</style>
+diff --cc pages/joinus.vue
+index 7ca1ae7,7ca1ae7,0000000..3d38160
+mode 100644,100644,000000..100644
+--- a/pages/joinus.vue
++++ b/pages/joinus.vue
+@@@@ -1,136 -1,136 -1,0 +1,87 @@@@
+  +<template>
+--   <div class="hero" style="background-color: #e2efff">
+--     <div class="joinus-hero d-flex align-center justify-center" style="margin-top: 65px">
+--       <v-container-fluid>
+--         <div class="overlay-div" style="padding: 10px">
+--           <div class="content-container">
+--             <h1 style="color: white; font-size: xx-large">Gabung yuk ke seminari garumm!!</h1>
+--           </div>
+--         </div>
+--       </v-container-fluid>
+--     </div>
++++  <div class="hero">
++++    <Hero :namabackground="'assets/joinushero.jpg'" :title="'Join Us'" :color="'#ffffff'" :fill="'#00509a'" />
+  +  </div>
+--   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--     <path
+--       fill="#e2efff"
+--       fill-opacity="1"
+--       d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--     ></path>
+--   </svg>
+  +
+--   <div class="history" style="border-radius: 100px; margin-top: 60px; background-color: #e2efff">
+--     <v-container>
+--       <v-row>
+--         <v-col class="mt-3">
+--           <h1>{{ boarding[0].title }}</h1>
++++  <Ourprofile :nama="boarding" :width="'80%'" />
+  +
+--           <p class="pt-3">{{ boarding[0].description }}</p>
+--         </v-col>
+--       </v-row>
+--     </v-container>
++++  <div class="history" style="background-color: #ffffff">
++++    <Defaultcomp :arraynama="boardingfull" />
+  +  </div>
+--   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--     <path
+--       fill="#e2efff"
+--       fill-opacity="1"
+--       d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--     ></path>
+--   </svg>
+--   <div class="gambar asrama">
+--     <v-container>
+--       <v-row>
+--         <v-col :cols="12" :lg="6">
+--           <div class="imgcontainer">
+--             <h1 style="margin-bottom: 20px">Tempat Tinggal Para siswa seminari Garum</h1>
+--             <p>
+--               Siswa yang sudah terdaftar dan diterima di seminari akan disediakan tempat tinggal berupa asrama yang tentunya sudah cukup bagus dan layak ditinggali. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+--               voluptatibus repellendus repellat qui ratione aut sed aspernatur? Ab nesciunt sed, dolorem culpa et expedita voluptatum consequuntur ullam veniam atque eaque eius fugit sunt? Assumenda soluta suscipit minus quos fugit vel
+--               impedit dolore accusamus earum quis sed blanditiis est cupiditate velit, quia odio laudantium ullam magnam! Sed vel, nulla voluptatum accusamus debitis corporis eaque eligendi possimus dolor laboriosam aperiam assumenda?
+--               Recusandae amet beatae ea illo fuga dolores autem expedita debitis officiis perferendis unde quae minus, fugiat temporibus quibusdam in sed vel dolore blanditiis assumenda nemo, ex quia libero quisquam? Vel, dolor!
+--             </p>
+--           </div>
+--         </v-col>
+--         <v-col :cols="12" :lg="6">
+--           <img src="assets/asramagarum.jpg" style="width: 100%" alt="" />
+--         </v-col>
+--       </v-row>
+--     </v-container>
+--     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--       <path
+--         fill="#e2efff"
+--         fill-opacity="1"
+--         d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--       ></path>
+--     </svg>
++++
++++  <div class="gambar asrama" style="margin-top: 48px; background-color: #ffffff">
++++    <Defaultcompimage :namaarray="asrama" :width="'100%'" />
+  +  </div>
+--   <div id="kurikulum">
+--     <v-container>
+--       <v-row>
+--         <v-col :cols="6" :lg="6">
+--           <h1 style="margin-bottom: 20px">Kurikulum yang digunakan untuk pembelajaran di seminari garum</h1>
+--           <p>
+--             Pendidikan di seminari garum mulai dari smp sampai sma adapun pembagian kurikulum yaitu kurikulum seminari untuk persiapan kelas pertama dan kelas atas dan kurikulum 2013 untuk jenjang sekolah menengah atas (SMA). Lorem ipsum
+--             dolor sit amet consectetur adipisicing elit. Ipsa tempore quibusdam minus. Cupiditate soluta blanditiis distinctio molestiae beatae quasi totam placeat excepturi officia error alias saepe, rerum voluptatem minus fugiat odit
+--             consequuntur. Nulla praesentium animi consectetur placeat quibusdam facilis perspiciatis accusantium sint esse, porro repudiandae inventore? Dolorum expedita obcaecati corrupti veniam eum nostrum autem placeat blanditiis earum
+--             vero sit numquam culpa nisi, at ipsam voluptas pariatur cupiditate ipsum ab a est. Dicta assumenda aspernatur rerum cumque officia temporibus eum nulla animi dolore enim odit blanditiis itaque odio consequatur, nostrum, vitae
+--             obcaecati omnis incidunt earum voluptatem! Minus consequatur nisi repudiandae voluptas.
+--           </p>
+--         </v-col>
+--         <v-col :cols="6" :lg="6">
+--           <img src="assets/kurikulum2013.png" style="width: 100%" alt="" />
+--         </v-col>
+--       </v-row>
+--     </v-container>
+--     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+--       <path
+--         fill="#e2efff"
+--         fill-opacity="1"
+--         d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+--       ></path>
+--     </svg>
++++  <div id="kurikulum" style="margin-top: 48px; background-color: #ffffff">
++++    <Defaultcompimage :namaarray="kurikulum" :width="'70%'" />
+  +  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  data: () => ({
+  +    boarding: [
+  +      {
+--         title: 'Kebijakan boarding school',
++++        title: 'Gabung yuk!!',
++++
++++        description:
++++          'Di Seminari Garum siswa siswinya diberikan tempat tinggal berupa asrama, disana mereka bisa bermain dan belajar serta berkomunikasi dengan temannya untuk menjalin relasi yang baik. selain itu kurikulum di seminari ini ialah menggunakan kurikulum 13',
++++        path: 'assets/pestanama.jpg',
++++      },
++++    ],
++++    boardingfull: [
++++      {
++++        title: 'Kebijakan boarding garum',
++++        description:
++++          'Sekolah berasrama (Boarding School) yang menjadi model pembinaan Seminari Garum mengakibatkan tata tertib, jadwal rutin, dan aneka fungsi hidup berasrama yang dijalani oleh para Seminaris terhubung secara utuh dan langsung dengan dinamika persekolahan formal dalam satu sistem pembinaan. Lembaga pendidikan Seminari Garum adalah SMA Katolik Seminari Garum yang berada di bawah naungan yayasan Yohanes Gabriel dan memiliki status terakreditasi A. \n\n Di sini, kurikulum yang digunakan adalah kurikulum SMA dan Pasca SMA (Kelas IV dan KPA). Sedangkan, untuk pembaharuan ataupun perubahan kurikulum dapat disesuaikan dengan lingkungan Pendidikan Nasional dan Pendidikan Calon Imam, seiring dengan munculnya tantangan-tantangan baru dalam Gereja dan Masyarakat di tingkat lokal, nasional maupun global. \n \n Di SMA Katolik Seminari Garum, para siswa mendapat tambahan bidang studi khusus, yaitu Bahasa Latin, Keseminarisan, Bahasa Jawa, dan Kitab Suci (Perjanjian Baru). Sedangkan untuk kelas IV dan KPA yang memakai kurikulum pasca SMA juga  mendapatkan mata pelajaran khusus, seperti Kesekretariatan , Pastoral Dasar dan Lapangan, Liturgi,  Logika, Humaniora, Katekese, Eksplorasi Pembelajaran, Dinamika Hidup Gereja, Homiletika, Community Building, Karya Tulis, Spiritualitas, Integrasi Kepribadian dan Kitab Suci (Perjanjian Lama dan Perjanjian Baru). \n \n Selain itu, proses belajar mengajar, kegiatan ekstrakurikuler, dan hidup harian diselenggarakan secara otonom di kompleks Seminari ini, sehingga memudahkan bagi para seminaris untuk lebih terkonsentrasi dalam menghidupi panggilan serta nilai-nilai hidup yang diberikan oleh pihak Seminari. SMA Katolik Seminari Garum menyediakan dua jurusan, yaitu IPA dan IPS yang dilengkapi dengan sarana dan prasarana  yang berpotensi  mendukung proses belajar mengajar, seperti Lab. Fisika, Lab. Kimia, Lab. Biologi, Lab Bahasa, Ruang Eksplorasi, Multimedia, Ruang Kesenian, Perpustakaan Modern, Widya Loka, Green House, Rumah Kompos,  dan juga Poliklinik. Seminari Garum menerima siswa lulusan SMP dan SMA/SMK. \n \n  Untuk lulusan SMP, mereka langsung masuk ke jenjang SMA, yaitu kelas X. Sedangkan untuk lulusan SMA/SMK, mereka akan masuk ke dalam Kelas Persiapan Atas (KPA) dan dibina selama satu tahun untuk kemudian bisa melanjutkan di kelas IV. Di Seminari Garum terdapat empat tingkatan, untuk tingkatan I-III adalah setara SMA, namun untuk tingkat IV adalah masa pembinaan bagi Seminaris yang ingin melanjutkan ke jalan Imamat. \n \n Masa ini biasanya digunakan untuk persiapan memilih Ordo atau Tarekat serta masa pelatihan untuk terjun langsung ke dalam kehidupan umat dengan kegiatan khasnya, yaitu berpastoral ke sekolah dan stasi yang dilakukan selama dua hari (Sabtu-Minggu). \n\n  Selain itu, yang menjadi perhatian dalam pembinaan di Seminari Garum adalah Hidup Panggilan, Kerasulan, Kepribadian, Intelektual, dan Kerohaniam . Kelima hal ini terangkum dalam 5 aspek pembinaan Seminari, sebagai penjabaran dari arah dasar pembinaan Seminari (Sanctitas, Sanitas, dan Scientia).',
++++      },
++++    ],
++++    asrama: [
++++      {
++++        title: 'Tempat Tinggal Para siswa seminari Garum',
++++        description:
++++          '   Siswa yang sudah terdaftar dan diterima di seminari akan disediakan tempat tinggal berupa asrama yang tentunya sudah cukup bagus dan layak ditinggali. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus voluptatibus repellendus repellat qui ratione aut sed aspernatur? Ab nesciunt sed, dolorem culpa et expedita voluptatum consequuntur ullam veniam atque eaque eius fugit sunt? Assumenda soluta suscipit minus quos fugit vel impedit dolore accusamus earum quis sed blanditiis est cupiditate velit, quia odio laudantium ullam magnam! Sed vel, nulla voluptatum accusamus debitis corporis eaque eligendi possimus dolor laboriosam aperiam assumenda? Recusandae amet beatae ea illo fuga dolores autem expedita debitis officiis perferendis unde quae minus, fugiat temporibus quibusdam in sed vel dolore blanditiis assumenda nemo, ex quia libero quisquam? Vel, dolor!',
++++        src: 'assets/asramagarum.jpg',
++++      },
++++    ],
++++    kurikulum: [
++++      {
++++        title: 'Kurikulum yang digunakan untuk pembelajaran di seminari garum',
+  +        description:
+--           'Sekolah berasrama (Boarding School) yang menjadi model pembinaan Seminari Garum mengakibatkan tata tertib, jadwal rutin, dan aneka fungsi hidup berasrama yang dijalani oleh para Seminaris terhubung secara utuh dan langsung dengan dinamika persekolahan formal dalam satu sistem pembinaan. Lembaga pendidikan Seminari Garum adalah SMA Katolik Seminari Garum yang berada di bawah naungan yayasan Yohanes Gabriel dan memiliki status terakreditasi A. Di sini, kurikulum yang digunakan adalah kurikulum SMA dan Pasca SMA (Kelas IV dan KPA). Sedangkan, untuk pembaharuan ataupun perubahan kurikulum dapat disesuaikan dengan lingkungan Pendidikan Nasional dan Pendidikan Calon Imam, seiring dengan munculnya tantangan-tantangan baru dalam Gereja dan Masyarakat di tingkat lokal, nasional maupun global.Di SMA Katolik Seminari Garum, para siswa mendapat tambahan bidang studi khusus, yaitu Bahasa Latin, Keseminarisan, Bahasa Jawa, dan Kitab Suci (Perjanjian Baru). Sedangkan untuk kelas IV dan KPA yang memakai kurikulum pasca SMA juga  mendapatkan mata pelajaran khusus, seperti Kesekretariatan , Pastoral Dasar dan Lapangan, Liturgi,  Logika, Humaniora, Katekese, Eksplorasi Pembelajaran, Dinamika Hidup Gereja, Homiletika, Community Building, Karya Tulis, Spiritualitas, Integrasi Kepribadian dan Kitab Suci (Perjanjian Lama dan Perjanjian Baru). Selain itu, proses belajar mengajar, kegiatan ekstrakurikuler, dan hidup harian diselenggarakan secara otonom di kompleks Seminari ini, sehingga memudahkan bagi para seminaris untuk lebih terkonsentrasi dalam menghidupi panggilan serta nilai-nilai hidup yang diberikan oleh pihak Seminari. SMA Katolik Seminari Garum menyediakan dua jurusan, yaitu IPA dan IPS yang dilengkapi dengan sarana dan prasarana  yang berpotensi  mendukung proses belajar mengajar, seperti Lab. Fisika, Lab. Kimia, Lab. Biologi, Lab Bahasa, Ruang Eksplorasi, Multimedia, Ruang Kesenian, Perpustakaan Modern, Widya Loka, Green House, Rumah Kompos,  dan juga Poliklinik. Seminari Garum menerima siswa lulusan SMP dan SMA/SMK. Untuk lulusan SMP, mereka langsung masuk ke jenjang SMA, yaitu kelas X. Sedangkan untuk lulusan SMA/SMK, mereka akan masuk ke dalam Kelas Persiapan Atas (KPA) dan dibina selama satu tahun untuk kemudian bisa melanjutkan di kelas IV. Di Seminari Garum terdapat empat tingkatan, untuk tingkatan I-III adalah setara SMA, namun untuk tingkat IV adalah masa pembinaan bagi Seminaris yang ingin melanjutkan ke jalan Imamat. Masa ini biasanya digunakan untuk persiapan memilih Ordo atau Tarekat serta masa pelatihan untuk terjun langsung ke dalam kehidupan umat dengan kegiatan khasnya, yaitu berpastoral ke sekolah dan stasi yang dilakukan selama dua hari (Sabtu-Minggu). Selain itu, yang menjadi perhatian dalam pembinaan di Seminari Garum adalah Hidup Panggilan, Kerasulan, Kepribadian, Intelektual, dan Kerohaniam . Kelima hal ini terangkum dalam 5 aspek pembinaan Seminari, sebagai penjabaran dari arah dasar pembinaan Seminari (Sanctitas, Sanitas, dan Scientia).',
++++          'Pendidikan di seminari garum mulai dari smp sampai sma adapun pembagian kurikulum yaitu kurikulum seminari untuk persiapan kelas pertama dan kelas atas dan kurikulum 2013 untuk jenjang sekolah menengah atas (SMA). Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa tempore quibusdam minus. Cupiditate soluta blanditiis distinctio molestiae beatae quasi totam placeat excepturi officia error alias saepe, rerum voluptatem minus fugiat odit consequuntur. Nulla praesentium animi consectetur placeat quibusdam facilis perspiciatis accusantium sint esse, porro repudiandae inventore? Dolorum expedita obcaecati corrupti veniam eum nostrum autem placeat blanditiis earum vero sit numquam culpa nisi, at ipsam voluptas pariatur cupiditate ipsum ab a est. Dicta assumenda aspernatur rerum cumque officia temporibus eum nulla animi dolore enim odit blanditiis itaque odio consequatur, nostrum, vitae obcaecati omnis incidunt earum voluptatem! Minus consequatur nisi repudiandae voluptas.',
++++        src: 'assets/kurikulum2013.png',
+  +      },
+  +    ],
+  +  }),
+  +};
+  +</script>
+  +<style>
+  +.joinus-hero {
+  +  background-image: url('assets/joinushero.jpg');
+  +  opacity: 70%;
+  +  background-repeat: no-repeat;
+  +  background-size: cover;
+  +  width: 100%;
+  +  height: 600px;
+  +
+  +  background-color: #e2efff;
+  +}
+  +.icon-right {
+  +  float: left;
+  +  margin-right: 20px;
+  +}
+  +.hidden-text {
+  +  display: none;
+  +  position: absolute;
+  +  top: 70%;
+  +  left: 50%;
+  +  transform: translate(-50%, -50%);
+  +  background-color: rgba(255, 255, 255, 0.8);
+  +  padding: 10px;
+  +  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  +}
+  +
+  +.v-carousel-item:hover .hidden-text {
+  +  display: block;
+  +}
+  +</style>
+diff --cc pages/ourprofile.vue
+index 5e16ec3,5e16ec3,0000000..144d458
+mode 100644,100644,000000..100644
+--- a/pages/ourprofile.vue
++++ b/pages/ourprofile.vue
+@@@@ -1,150 -1,150 -1,0 +1,127 @@@@
+  +<template>
+--   <Hero />
++++  <Hero :title="'Our Profile'" :namabackground="'assets/ourprofilehero.jpg'" :color="'#ffffff'" :fill="'#00509a'" />
+  +
+--   <Ourprofile :nama="messagehead" :link="''" />
+-- 
+--   <Defaultcompimage />
+--   <Defaultcomp :arraynama="history" />
+-- 
+--   <!-- <div class="vision">
+--     <v-container>
+--       <v-row>
+--         <v-col style="border-radius: 100px; background-color: #e2efff; margin-top: 60px">
+--           <div class="visiontext" style="padding: 30px">
+--             <h1>{{ vision[0].title }}</h1>
+--             <p class="mt-5">{{ vision[0].deskripsi }}</p>
+--           </div>
+--         </v-col>
+--       </v-row>
+--     </v-container>
+--   </div> -->
+--   <!-- <div id="ourpeople">
+--     <v-container>
+--       <v-row>
+--         <v-col>
+--           <h1>{{ people[0].title }}</h1>
+--           <v-carousel>
+--             <v-carousel-item v-for="(item, index) in people" :key="index">
+--               <v-img :src="item.src" :alt="item.alt" aspect-ratio="2.7" @mouseenter="showText(index)" @mouseleave="hideText(index)"> </v-img>
+--               <p class="hidden-text" v-if="hoveredIndex === index">{{ item.nama }}<br />{{ item.jabatan }}</p>
+--             </v-carousel-item>
+--           </v-carousel>
+--         </v-col>
+--       </v-row>
+--     </v-container>
+--   </div> -->
++++  <Ourprofile :nama="messagehead" :link="''" :width="'80%'" />
++++  <div class="defaultcompimage">
++++    <Defaultcompcarousel />
++++  </div>
++++  <div class="history" style="margin-top: 48px">
++++    <Defaultcomp :arraynama="history" />
++++  </div>
++++  <div class="vision" style="margin-top: 48px">
++++    <Defaultcomp :arraynama="vision" />
++++  </div>
+  +</template>
+  +
+  +<script>
+  +export default {
+  +  data: () => ({
+  +    messagehead: [
+  +      {
+  +        title: 'Message from the Head of College',
+  +        description:
+  +          'Welcome to our website and our Stannies community. For more than 155 years we have shared with our families in the sacred vocation of forming, educating and caring for young men in both boarding and day school environments.\n\n St Stanislaus’ College seeks to proclaim the gospel in the spirit of St Vincent de Paul through the formation of our students and all associated with the school, with special emphasis given to the spiritual, intellectual, social and physical growth of each person within and for the larger community. \n\n As Australia’s oldest continuing Catholic boys’ boarding and day school, our Stannies boarding community remains at the heart of the school. Stannies is a world where boys can find their place, safe in the knowledge that they will be supported and challenged to strive for personal excellence, where learning is engaging, where teachers focus on boys’ education, on their wellbeing and unlocking the wonders of a future full of hope. Stannies is a very special place from where our graduates enter the world as Vincentians, firm in their conviction that together they will change the world by their being “a man for others”',
+  +        path: 'assets/lindsayluck.jpg',
+  +        name: 'Mr Lindsay Luck',
+  +      },
+  +    ],
+  +    history: [
+  +      {
+  +        title: 'Sejarah Berdiri',
+  +        description:
+  +          '  Seminari Menengah pertama Keuskupan Surabaya didirikan oleh Mgr. Dr Michael Verhoeks , CM (29 juni 1948), bertempat di Paviliun Pastoran Paroki Kelahiran Santa Perawan Maria, Surabaya sebagai bentuk realisasi dari gagasan Mgr. Dr. De Backere, CM  yang menjabat sebagai Prefek Apostolik Keuskupan Surabaya saat itu.\n\n Sebelumnya, sudah ada calon-calon Seminaris yang berhimpun di Kediri sejak 26 Juni 1948 atas perjuangan  Rm. Ign. Dwijasoesastra, CM. Karena pada saat itu pendudukan tentara Belanda masih genting, maka 8 calon seminaris yang berhimpun di Kediri tersebut digiring ke Surabaya dengan menempuh jalur darat selama tiga hari.\n\nPada tanggal 25 Pebruari 1950, Seminari Menengah Keuskupan Surabaya di pindahkan ke Jalan Dinoyo, 42 Surabaya (Sekarang Universitas Widya Mandala) berkat perjuangan Rm. Van Bakel, CM, dan pada saat itu yang menjadi rektor pertama kali adalah Rm. H. Van Megen, CM.\n\n Seiring berjalannya waktu, jumlah seminaris semakin banyak, sehingga rumah di Jalan Dinoyo, 42Surabaya tidak dapat menampung seminaris lagi. Melihat realita itu, Mgr. Drs.J.A.M. Klooster, CM yang menjabat sebagai uskup Surabaya waktu itu, menugaskan Rm. Van Driel,CM untuk mencari lahan baru demi menampung para calon Imam tersebut. Akhirnya , diperolehlah sebidang tanah yang luas di daerah Garum, Blitar. Maka, dibangunlah Seminari Menengah di situ.\n\n Pada tanggal 1 oktober 1958, para penghuni Seminari yang ada di Jalan Dinoyo, 42 Surabaya, serentak melakukan perpindahan ke Garum, Blitar untuk menempati Seminari baru mereka dengan nama Seminari Menengah St. Vincentius a Paulo.',
+  +      },
+  +    ],
+  +    people: [
+  +      {
+  +        title: 'Team kami di Seminari Garum',
+  +        description: 'Seminari kami merupakan seminari yang solid karena dikelilingi orang yang hebat seperti formator,guru dan staff yang selalu sabar dan setia dalam mendidik dan mengurus seminari kami tercinta',
+  +        src: 'assets/rektor.png',
+  +        nama: 'Rd.Yuventius Fusi N. ',
+  +        jabatan: 'Rektor',
+  +      },
+  +      {
+  +        src: 'assets/kepalasekolah.png',
+  +        nama: 'Rp.Tetra Vici.a.,CM ',
+  +        jabatan: 'Kepala Sekolah',
+  +      },
+  +      {
+  +        src: 'assets/romorobertus.png',
+  +        nama: 'RD. Robertus Theo E.R',
+  +        jabatan: 'Ekonom',
+  +      },
+  +      {
+  +        src: 'assets/domus.png',
+  +        nama: 'Robertus B. Aditya',
+  +        jabatan: 'Domus',
+  +      },
+  +      {
+  +        src: 'assets/formator.png',
+  +        nama: 'RD.Agus Raharjo',
+  +        jabatan: 'Formator',
+  +      },
+  +      {
+  +        src: 'assets/diakon&formator.png',
+  +        nama: 'Diakon vincentius Agsuko W',
+  +        jabatan: 'Diakon',
+  +      },
+  +    ],
+  +    hoveredIndex: null,
+  +    vision: [
+  +      {
+  +        title: 'Visi dan misi seminari garum',
+--         deskripsi:
+--           ' Visi Seminari Garum adalah “Seminari sebagai Sekolah Calon Imam-Kader Gereja yang berkesadaran Global dan Peka Tanggap terhadap Situasi Lokal”. Sedangkan misinya adalah “Mewujudkan Seminari sebagai Komunitas Pembelajar dan Pembinaan yang Membentuk Karakter dan Kompetensi Siswa, yang Unggul dalam Mutu Pendidikan Nilai, Berbasis 26 Nilai Kunci dengan Semangat Visi Seminari”. Keduapuluh enam nilai kunci itu tersusun dalam ketiga dimensi pembinaan khas Seminari (Sanctitas, Sanitas, dan Scientia), yaitu Imitasio Christi, Hidup Doa, Kerendahan hati, Compassio (belarasa), Spiritualitas Vinsensius, Karakter, Ugahari, Aksi nyata, Kerja tim, Solidaritas, Pelayanan, Kritis(asah otak), Keberanian ilmiah, Eksploratif, Kontekstual, Visi hidup, Integritas, Komitmen, Discerment, Keheningan, Kesetiaan, Daya Tahan, Disiplin, Cekatan, Kepekaan masalah masyarakat sosial, dan Keteladanan.Visi dan misi ini merupakan pendorong, penyemangat, sekaligus petunjuk arah Seminari Garum. Fungsi ini dibutuhkan agar langkah-langkah Seminari dan pengembangannya berada dalam bingkai yang tepat, sesuai dengan panggilan gereja di tengah zaman yang terus bergerak dan memberikan tantangan bagi pertobatan dan pewartaan nilai-nilai injil.',
++++        description:
++++          ' Visi Seminari Garum adalah “Seminari sebagai Sekolah Calon Imam-Kader Gereja yang berkesadaran Global dan Peka Tanggap terhadap Situasi Lokal”.\n \n Sedangkan misinya adalah “Mewujudkan Seminari sebagai Komunitas Pembelajar dan Pembinaan yang Membentuk Karakter dan Kompetensi Siswa, yang Unggul dalam Mutu Pendidikan Nilai, Berbasis 26 Nilai Kunci dengan Semangat Visi Seminari”.\n Keduapuluh enam nilai kunci itu tersusun dalam ketiga dimensi pembinaan khas Seminari (Sanctitas, Sanitas, dan Scientia), yaitu Imitasio Christi, Hidup Doa, Kerendahan hati, Compassio (belarasa), Spiritualitas Vinsensius, Karakter, Ugahari, Aksi nyata, Kerja tim, Solidaritas, Pelayanan, Kritis(asah otak), Keberanian ilmiah, Eksploratif, Kontekstual, Visi hidup, Integritas, Komitmen, Discerment, Keheningan, Kesetiaan, Daya Tahan, Disiplin, Cekatan, Kepekaan masalah masyarakat sosial, dan Keteladanan.\n \n Visi dan misi ini merupakan pendorong, penyemangat, sekaligus petunjuk arah Seminari Garum. Fungsi ini dibutuhkan agar langkah-langkah Seminari dan pengembangannya berada dalam bingkai yang tepat, sesuai dengan panggilan gereja di tengah zaman yang terus bergerak dan memberikan tantangan bagi pertobatan dan pewartaan nilai-nilai injil.',
+  +      },
+  +    ],
+  +  }),
+  +  methods: {
+  +    showText(index) {
+  +      this.hoveredIndex = index;
+  +    },
+  +    hideText() {
+  +      this.hoveredIndex = null;
+  +    },
+  +  },
+  +};
+  +</script>
+  +<style>
+  +.ourprofile-hero {
+  +  background-image: url('assets/ourprofilehero.jpg');
+-- 
+  +  background-repeat: no-repeat;
+  +  background-size: cover;
+  +  width: 100%;
+--   height: 600px;
++++  height: 100vh;
+  +
+  +  background-color: #e2efff;
+  +}
+  +.icon-right {
+  +  float: left;
+  +  margin-right: 20px;
+  +}
+  +/* .hidden-text {
+  +  display: none;
+  +  position: absolute;
+  +  top: 70%;
+  +  left: 50%;
+  +  transform: translate(-50%, -50%);
+  +  background-color: rgba(255, 255, 255, 0.8);
+  +  padding: 10px;
+  +  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  +} */
+  +
+  +.v-carousel-item:hover .hidden-text {
+  +  display: block;
+  +}
+  +.icon-container {
+  +  margin-top: 10px;
+--   margin-bottom: 50px;
++++
+  +  display: flex; /* Menggunakan flexbox untuk mengatur elemen sejajar */
+  +  align-items: center; /* Memusatkan elemen secara vertikal */
+  +}
+  +.icon-container2 {
+  +  margin-bottom: 50px;
+  +  display: flex; /* Menggunakan flexbox untuk mengatur elemen sejajar */
+  +  align-items: center; /* Memusatkan elemen secara vertikal */
+  +}
+  +</style>

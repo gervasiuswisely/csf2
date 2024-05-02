@@ -1,0 +1,76 @@
+<template>
+  <div>
+    <v-app>
+      <div class="container">
+        <v-app-bar app>
+          <img src="../public/assets/garumlogo.png" class="ms-10" alt="" />
+          <!-- <v-toolbar-title>Seminari menengah St. Vincentius A. Paulo</v-toolbar-title> -->
+          <v-spacer></v-spacer>
+          <div class="navlink">
+            <v-menu>
+              <template v-slot:activator="{ props }">
+                <NuxtLink class="text-grey navstyle" sv-bind="props" to="/">HOME</NuxtLink>
+              </template>
+            </v-menu>
+
+            <v-menu>
+              <template v-slot:activator="{ props }">
+                <NuxtLink class="text-grey navstyle" v-bind="props"> ABOUT</NuxtLink>
+              </template>
+              <v-list>
+                <v-list-item>
+                  <v-list-item-title><NuxtLink class="navstyle" to="/ourprofile">Our Profile</NuxtLink></v-list-item-title>
+                  <v-list-item-title><NuxtLink class="navstyle" to="/ourpeople">Our People</NuxtLink></v-list-item-title>
+                  <v-list-item-title><NuxtLink class="navstyle" to="/visionmision">Vision & Mission</NuxtLink></v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+
+            <v-menu>
+              <template v-slot:activator="{ props }">
+                <NuxtLink class="text-grey navstyle" v-bind="props"> JOIN US</NuxtLink>
+              </template>
+              <v-list>
+                <v-list-item>
+                  <v-list-item-title><NuxtLink class="navstyle" to="/boarding">Boarding</NuxtLink></v-list-item-title>
+                  <v-list-item-title><NuxtLink class="navstyle" to="/curriculum">Currriculum</NuxtLink></v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+
+            <v-menu>
+              <template v-slot:activator="{ props }">
+                <NuxtLink class="text-grey navstyle" v-bind="props"> GARUM'S LIFE</NuxtLink>
+              </template>
+              <v-list>
+                <v-list-item>
+                  <v-list-item-title><NuxtLink class="navstyle" to="/harian">Harian</NuxtLink></v-list-item-title>
+                  <v-list-item-title><NuxtLink class="navstyle" to="/bulanan">Bulanan</NuxtLink></v-list-item-title>
+                  <v-list-item-title><NuxtLink class="navstyle" to="/tahunan">Tahunan</NuxtLink></v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+
+            <v-menu>
+              <template v-slot:activator="{ props }">
+                <NuxtLink class="text-grey navstyle" v-bind="props" to="/article"> ARTICLE & PUBLICATION</NuxtLink>
+              </template>
+            </v-menu>
+
+            <v-menu>
+              <template v-slot:activator="{ props }">
+                <NuxtLink class="text-grey navstyle" v-bind="props" to="/contact"> CONTACT US</NuxtLink>
+              </template>
+            </v-menu>
+          </div>
+        </v-app-bar>
+      </div>
+    </v-app>
+  </div>
+</template>
+<style>
+.navstyle {
+  text-decoration: none;
+  padding: 10px;
+}
+</style>

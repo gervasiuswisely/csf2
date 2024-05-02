@@ -1,0 +1,278 @@
+<template>
+  <v-card>
+    <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
+
+    <v-app-bar color="white" prominent>
+      <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title> <img src="assets/garumlogo.png" style="height: 50px" alt="" /></v-toolbar-title>
+
+      <v-btn variant="text" icon="mdi-magnify"></v-btn>
+
+      <!-- <v-btn variant="text" icon="mdi-filter"></v-btn>
+
+        <v-btn variant="text" icon="mdi-dots-vertical"></v-btn> -->
+    </v-app-bar>
+
+    <v-navigation-drawer v-model="drawer" temporary>
+      <v-list>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props" to="/"> HOME</NuxtLink>
+            </template>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props"> ABOUT</NuxtLink>
+            </template>
+            <v-list>
+              <v-list-item>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourprofile">Our Profile</NuxtLink></v-list-item-title>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourpeople">Our People</NuxtLink></v-list-item-title>
+                <v-list-item-title><NuxtLink class="navstyle" to="/visionmision">Vision & Mission</NuxtLink></v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props"> JOIN US</NuxtLink>
+            </template>
+            <v-list>
+              <v-list-item>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourprofile">Boarding</NuxtLink></v-list-item-title>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourpeople">Curriculum</NuxtLink></v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props"> GARUM'S LIFE</NuxtLink>
+            </template>
+            <v-list>
+              <v-list-item>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourprofile">Harian</NuxtLink></v-list-item-title>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourpeople">Bulanan</NuxtLink></v-list-item-title>
+                <v-list-item-title><NuxtLink class="navstyle" to="/visionmision">Tahunan</NuxtLink></v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props"> ARTICLE & PUBLICATION</NuxtLink>
+            </template>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props" to="/contact"> CONTACT</NuxtLink>
+            </template>
+          </v-menu>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </v-card>
+</template>
+<script>
+export default {
+  data: () => ({
+    drawer: false,
+    group: null,
+    navbar: [
+      {
+        title: 'HOME',
+        value: 'home',
+      },
+      // {
+      //   title: 'ABOUT',
+      //   value: 'about',
+      // },
+      // {
+      //   title: 'JOIN US',
+      //   value: 'join',
+      // },
+      // {
+      //   title: "GARUM'S LIFE",
+      //   value: 'garum',
+      // },
+      // {
+      //   title: 'ARTICLE & PUBLICATION',
+      //   value: 'article',
+      // },
+      {
+        title: 'CONTACT',
+        value: 'contact',
+      },
+    ],
+    dropdown: [
+      {
+        title: 'ABOUT',
+        link1: 'Our Profile',
+        link2: 'Our Persons',
+        link3: 'Vision & Mission',
+      },
+    ],
+  }),
+
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
+};
+</script>
+<style>
+.navstyle {
+  text-decoration: none;
+}
+</style>
+
+
+template index.vue
+
+<template>
+  <div class="hero" style="background-color: #e2edff">
+    <v-container-fluid>
+      <v-row>
+        <v-col>
+          <!-- <h1 style="margin-top: 60px; width: 100%; height: 500px">ini adalah page home</h1> -->
+          <div class="video-container" style="width: 100%">
+            <video autoplay loop muted>
+              <source src="assets/herovideo.mp4" type="video/mp4" />
+            </video>
+            <div class="text-overlay">
+              <img src="assets/garumlogo.png" style="width: 30%; height: 30%" alt="" />
+              <h1>Welcome to Seminari Vincentius A Paulo</h1>
+              <NuxtLink to="/ourprofile" class="navstyle" style="color: white">Your Journey Start Here</NuxtLink>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container-fluid>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#ffffff"
+        fill-opacity="1"
+        d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+      ></path>
+    </svg>
+  </div>
+
+  <v-container-fluid>
+    <v-row class="ps-4" style="padding: 30px">
+      <v-col cols="12" lg="6" class="text-center"
+        ><h1 class="pb-5 pt-5">{{ about[0].title }}</h1>
+        <p>{{ about[0].description }}</p>
+        <NuxtLink class="navstyle" to="/ourprofile">Read More</NuxtLink>
+      </v-col>
+      <v-col cols="12" lg="6" class="text-center">
+        <div class="imgcover">
+          <img class="rounded-circle img-thumbnail" src="../public/assets/person.jpg" style="width: 50%" alt="" />
+        </div>
+      </v-col>
+    </v-row>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#e2efff"
+        fill-opacity="1"
+        d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,133.3C420,107,480,85,540,101.3C600,117,660,171,720,186.7C780,203,840,181,900,160C960,139,1020,117,1080,96C1140,75,1200,53,1260,64C1320,75,1380,117,1410,138.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+      ></path>
+    </svg>
+  </v-container-fluid>
+
+  <v-container-fluid>
+    <v-row>
+      <v-col col="12" lg="6" v-for="(items, index) in joinus" :key="index">
+        <img :src="items.path" alt="" />
+      </v-col>
+    </v-row>
+  </v-container-fluid>
+</template>
+
+navbar terbaru
+
+<v-card>
+    <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
+
+    <v-app-bar color="white" prominent>
+      <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <img src="assets/garumlogo.png" style="height: 50px" alt="" />
+      <v-toolbar-title>Seminari vincentius A Paulo</v-toolbar-title>
+      <v-btn variant="text" icon="fas fa-search"></v-btn>
+
+      <!-- <v-btn variant="text" icon="mdi-filter"></v-btn>
+  
+          <v-btn variant="text" icon="mdi-dots-vertical"></v-btn> -->
+    </v-app-bar>
+
+    <v-navigation-drawer v-model="drawer" temporary>
+      <v-list>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props" to="/"> HOME</NuxtLink>
+            </template>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" to="/ourprofile" v-bind="props"> ABOUT</NuxtLink>
+            </template>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props"> JOIN US</NuxtLink>
+            </template>
+            <v-list>
+              <v-list-item>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourprofile">Boarding</NuxtLink></v-list-item-title>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourpeople">Curriculum</NuxtLink></v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-list-item>
+
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props"> GARUM'S LIFE</NuxtLink>
+            </template>
+            <v-list>
+              <v-list-item>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourprofile">Harian</NuxtLink></v-list-item-title>
+                <v-list-item-title><NuxtLink class="navstyle" to="/ourpeople">Bulanan</NuxtLink></v-list-item-title>
+                <v-list-item-title><NuxtLink class="navstyle" to="/visionmision">Tahunan</NuxtLink></v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props"> ARTICLE & PUBLICATION</NuxtLink>
+            </template>
+          </v-menu>
+        </v-list-item>
+        <v-list-item>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <NuxtLink class="text-grey navstyle" v-bind="props" to="/contact"> CONTACT</NuxtLink>
+            </template>
+          </v-menu>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </v-card>

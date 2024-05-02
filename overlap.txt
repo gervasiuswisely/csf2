@@ -1,0 +1,55 @@
+<v-row style="margin-top: 24px display: flex" class="mx-16">
+    <div style="width: 50%; display: flex; max-height: 50vh; flex-direction: row" class="px-3">
+      <div style="width: 50%; background-color: #103124">
+        <img src="assets/overlapbg1.png" alt="" style="height: 100%" srcset="" />
+      </div>
+      <div style="width: 50%; background-color: #103124">
+        <div class="text-white" style="margin-left: 20px; line-height: 170%; width: 85%">
+          <h1 style="margin-top: 48px; font-weight: 600" class="text-lg-h6">Studi Kitab Suci</h1>
+          <p style="margin-top: 8px">Lorem ipsum dolor sit amet, consectetur adipiscing elit adipicising elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        </div>
+      </div>
+    </div>
+    <div style="width: 50%; display: flex; max-height: 50vh; flex-direction: row" class="px-3">
+      <div style="width: 50%; background-color: #768a38">
+        <div class="text-white" style="margin-left: 20px; line-height: 170%; width: 85%">
+          <h1 style="margin-top: 48px; font-weight: 600" class="text-lg-h6">Studi Kitab Suci</h1>
+          <p style="margin-top: 8px">Lorem ipsum dolor sit amet, consectetur adipiscing elit adipicising elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        </div>
+      </div>
+      <div style="width: 50%; background-color: #27674e">
+        <img src="assets/overlapbg2.png" alt="" style="height: 100%" srcset="" />
+        <!-- <div style="width: 100%; height: 100%; background-color: aqua; background-image: url('assets/overlapbg1.png'); background-size: cover; background-repeat: no-repeat"></div> -->
+      </div>
+    </div>
+  </v-row>
+
+  <v-row style="margin-top: 24px display: flex" class="mx-16 mt-8">
+    <div style="width: 50%; display: flex; max-height: 50vh; flex-direction: row" class="px-3">
+      <div style="width: 50%; background-color: #768a38">
+        <img src="assets/overlapbg3.png" alt="" style="height: 100%" srcset="" />
+        <!-- <div style="width: 100%; height: 100%; background-color: aqua; background-image: url('assets/overlapbg1.png'); background-size: cover; background-repeat: no-repeat"></div> -->
+      </div>
+      <div style="width: 50%; background-color: #768a38">
+        <div class="text-white" style="margin-left: 20px; line-height: 170%; width: 85%">
+          <h1 style="margin-top: 48px; font-weight: 600" class="text-lg-h6">Studi Kitab Suci</h1>
+          <p style="margin-top: 8px">Lorem ipsum dolor sit amet, consectetur adipiscing elit adipicising elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        </div>
+      </div>
+    </div>
+    <div style="width: 50%; display: flex; max-height: 50vh; flex-direction: row" class="px-3">
+      <div style="width: 50%; background-color: #103124">
+        <div class="text-white" style="margin-left: 20px; line-height: 170%; width: 85%">
+          <h1 style="margin-top: 48px; font-weight: 600" class="text-lg-h6">Studi Kitab Suci</h1>
+          <p style="margin-top: 8px">Lorem ipsum dolor sit amet, consectetur adipiscing elit adipicising elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        </div>
+      </div>
+      <div style="width: 50%; background-color: #27674e">
+        <img src="assets/overlapbg4.png" alt="" style="height: 100%" srcset="" />
+        <!-- <div style="width: 100%; height: 100%; background-color: aqua; background-image: url('assets/overlapbg1.png'); background-size: cover; background-repeat: no-repeat"></div> -->
+      </div>
+    </div>
+    <ButtonCTA style="margin: auto; margin-top: 20px" :ctaTitle="'Load More'" :bgcolorcta="'var(--variable-collection-CIM)'" />
+  </v-row>
+
+  <!-- <div style="background-color: #768a38; width: 50%"></div> -->
